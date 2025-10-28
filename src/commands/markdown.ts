@@ -1,5 +1,5 @@
 import {Args, Command, Flags} from '@oclif/core'
-import {createWatsonxClient} from '../core/providers/watsonx.js'
+import {createClient} from '../core/providers/watsonx.js'
 import {MarkdownTranslator} from '../core/translators/markdown.js'
 
 export default class Markdown extends Command {
@@ -49,7 +49,7 @@ export default class Markdown extends Command {
       input = Buffer.concat(chunks).toString('utf-8')
     }
 
-    const llm = createWatsonxClient()
+    const llm = createClient()
     const translator = new MarkdownTranslator(llm)
 
     if (flags.stream) {

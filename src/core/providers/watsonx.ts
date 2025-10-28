@@ -15,7 +15,7 @@ export interface WatsonxConfig {
 /**
  * Creates and returns a configured watsonx.ai chat model with IAM authentication
  */
-export function createWatsonxClient(config?: Partial<WatsonxConfig>): ChatWatsonx {
+export function createClient(config?: Partial<WatsonxConfig>): ChatWatsonx {
   // Get configuration from environment variables or provided config
   const serviceUrl = config?.serviceUrl || process.env.WATSONX_AI_SERVICE_URL;
   const projectId = config?.projectId || process.env.WATSONX_AI_PROJECT_ID;
