@@ -4,11 +4,11 @@ import { ChatWatsonx } from '@langchain/community/chat_models/ibm';
  * Configuration for watsonx.ai client
  */
 export interface WatsonxConfig {
-  serviceUrl: string;
-  projectId: string;
   apiKey: string;
-  model?: string;
   maxNewTokens?: number;
+  model?: string;
+  projectId: string;
+  serviceUrl: string;
   temperature?: number;
 }
 
@@ -36,14 +36,14 @@ export function createClient(config?: Partial<WatsonxConfig>): ChatWatsonx {
 
   // Create and return the chat model with IAM authentication
   return new ChatWatsonx({
-    model: config?.model || 'ibm/granite-3-8b-instruct',
-    version: '2024-05-31',
-    serviceUrl,
-    projectId,
-    watsonxAIAuthType: 'iam',
-    watsonxAIApikey: apiKey,
-    maxTokens: config?.maxNewTokens || 2000,
-    temperature: config?.temperature || 0.3,
     maxRetries: 3,
+    maxTokens: config?.maxNewTokens || 2000,
+    model: config?.model || 'ibm/granite-3-8b-instruct',
+    projectId,
+    serviceUrl,
+    temperature: config?.temperature || 0.3,
+    version: '2024-05-31',
+    watsonxAIApikey: apiKey,
+    watsonxAIAuthType: 'iam',
   });
 }

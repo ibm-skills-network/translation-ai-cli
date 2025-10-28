@@ -3,6 +3,11 @@
  */
 export interface TranslationOptions {
   /**
+   * The markdown content to translate
+   */
+  content: string;
+
+  /**
    * Source language (e.g., "EN", "ES")
    */
   sourceLanguage: string;
@@ -11,9 +16,4 @@ export interface TranslationOptions {
    * Target language (e.g., "EN", "ES")
    */
   targetLanguage: string;
-
-  /**
-   * The markdown content to translate
-   */
-  content: string;
 }

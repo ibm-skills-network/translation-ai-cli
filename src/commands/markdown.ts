@@ -1,36 +1,34 @@
 import {Args, Command, Flags} from '@oclif/core'
+
 import {createClient} from '../core/providers/watsonx.js'
 import {MarkdownTranslator} from '../core/translators/markdown.js'
 
 export default class Markdown extends Command {
-  static description = 'Translate markdown'
-
   static args = {
     input: Args.string({
       description: 'The markdown text you want to translate',
       required: false,
     }),
   }
-
+  static description = 'Translate markdown'
   static examples = [
     '<%= config.bin %> <%= command.id %> --from EN --to ES "Hello"',
     '<%= config.bin %> <%= command.id %> --from EN --to ES --stream "Hello"',
     'cat doc.md | <%= config.bin %> <%= command.id %> --from EN --to ES',
     'echo "# Hello" | <%= config.bin %> <%= command.id %> --from EN --to ES',
   ]
-
   static flags = {
     from: Flags.string({
       description: 'Source language',
       required: true,
     }),
+    stream: Flags.boolean({
+      default: false,
+      description: 'Stream the translation output',
+    }),
     to: Flags.string({
       description: 'Target language',
       required: true,
-    }),
-    stream: Flags.boolean({
-      description: 'Stream the translation output',
-      default: false,
     }),
   }
 
@@ -46,7 +44,8 @@ export default class Markdown extends Command {
       for await (const chunk of process.stdin) {
         chunks.push(chunk)
       }
-      input = Buffer.concat(chunks).toString('utf-8')
+
+      input = Buffer.concat(chunks).toString('utf8')
     }
 
     const llm = createClient()
@@ -54,18 +53,19 @@ export default class Markdown extends Command {
 
     if (flags.stream) {
       for await (const chunk of translator.translateStream({
+        content: input,
         sourceLanguage: flags.from,
         targetLanguage: flags.to,
-        content: input,
       })) {
         process.stdout.write(chunk)
       }
+
       process.stdout.write('\n')
     } else {
       const result = await translator.translate({
+        content: input,
         sourceLanguage: flags.from,
         targetLanguage: flags.to,
-        content: input,
       })
 
       this.log(result)
