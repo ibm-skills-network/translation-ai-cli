@@ -7,7 +7,8 @@
     "strict": true,
     "target": "es2022",
     "moduleResolution": "node16",
-    "types": ["vitest/globals"]
+    "types": ["jest", "node"],
+    "isolatedModules": true
   },
   "include": ["./src/**/*"],
   "ts-node": {

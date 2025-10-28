@@ -59,8 +59,6 @@ export default class Markdown extends Command {
       })) {
         process.stdout.write(chunk)
       }
-
-      process.stdout.write('\n')
     } else {
       const result = await translator.translate({
         content: input,
@@ -68,7 +66,7 @@ export default class Markdown extends Command {
         targetLanguage: flags.to,
       })
 
-      this.log(result)
+      process.stdout.write(result)
     }
   }
 }
