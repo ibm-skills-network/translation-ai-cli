@@ -7,14 +7,16 @@ export default class Markdown extends Command {
 
   static args = {
     input: Args.string({
-      description: 'Input (use @filename for file, or omit for stdin)',
+      description: 'The markdown text you want to translate',
       required: false,
     }),
   }
 
   static examples = [
-    'cat doc.md | <%= config.bin %> <%= command.id %> --from English --to Spanish',
-    'echo "# Hello" | <%= config.bin %> <%= command.id %> --from en --to es',
+    '<%= config.bin %> <%= command.id %> --from EN --to ES "Hello"',
+    '<%= config.bin %> <%= command.id %> --from EN --to ES --stream "Hello"',
+    'cat doc.md | <%= config.bin %> <%= command.id %> --from EN --to ES',
+    'echo "# Hello" | <%= config.bin %> <%= command.id %> --from EN --to ES',
   ]
 
   static flags = {
