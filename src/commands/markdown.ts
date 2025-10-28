@@ -1,4 +1,6 @@
 import {Args, Command, Flags} from '@oclif/core'
+import {createWatsonxClient} from '../core/providers/watsonx.js'
+import {MarkdownTranslator} from '../core/translators/markdown.js'
 
 export default class Markdown extends Command {
   static description = 'Translate markdown'
@@ -24,6 +26,10 @@ export default class Markdown extends Command {
       description: 'Target language',
       required: true,
     }),
+    stream: Flags.boolean({
+      description: 'Stream the translation output',
+      default: false,
+    }),
   }
 
   async run(): Promise<void> {
@@ -41,6 +47,26 @@ export default class Markdown extends Command {
       input = Buffer.concat(chunks).toString('utf-8')
     }
 
-    // TODO: invoke a markdown translator with provided inputs
+    const llm = createWatsonxClient()
+    const translator = new MarkdownTranslator(llm)
+
+    if (flags.stream) {
+      for await (const chunk of translator.translateStream({
+        sourceLanguage: flags.from,
+        targetLanguage: flags.to,
+        content: input,
+      })) {
+        process.stdout.write(chunk)
+      }
+      process.stdout.write('\n')
+    } else {
+      const result = await translator.translate({
+        sourceLanguage: flags.from,
+        targetLanguage: flags.to,
+        content: input,
+      })
+
+      this.log(result)
+    }
   }
 }
