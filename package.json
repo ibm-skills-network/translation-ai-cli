@@ -73,5 +73,6 @@
     "test:watch": "NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "version": "oclif readme && git add README.md"
   },
-  "types": "dist/index.d.ts"
+  "types": "dist/index.d.ts",
+  "packageManager": "pnpm@10.18.3"
 }
