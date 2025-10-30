@@ -20,11 +20,10 @@ export class MarkdownSplitter {
   constructor(chunkSize = 12_000) {
     this.chunkSize = chunkSize
 
-    // Initialize LangChain's MarkdownTextSplitter for Pass 2
     this.recursiveSplitter = new MarkdownTextSplitter({
-      chunkOverlap: 0, // No overlap needed for translation (avoids duplicates)
+      chunkOverlap: 0,
       chunkSize,
-      keepSeparator: true, // Preserve markdown formatting (headers, etc.)
+      keepSeparator: true,
     })
   }
 
@@ -57,6 +56,22 @@ export class MarkdownSplitter {
     const firstPassChunks = this.splitInternal(markdown, /^::page/m)
 
     return this.secondPassSplit(firstPassChunks)
+  }
+
+  /**
+   * Creates a chunk with whitespace extracted and stored separately
+   */
+  private createChunk(content: string, shouldTranslate: boolean): Chunk {
+    const leadingWhitespace = content.match(/^\s+/)?.[0] || ''
+    const trailingWhitespace = content.match(/\s+$/)?.[0] || ''
+    const trimmedContent = content.trim()
+
+    return {
+      content: trimmedContent,
+      leadingWhitespace,
+      shouldTranslate,
+      trailingWhitespace,
+    }
   }
 
   /**
@@ -93,26 +108,28 @@ export class MarkdownSplitter {
   private async secondPassSplit(chunks: Chunk[]): Promise<Chunk[]> {
     const finalChunks: Chunk[] = []
 
-    // Process all chunks, splitting large ones
     const splitPromises = chunks.map(async (chunk) => {
-      // If chunk is within size limit, keep as-is
       if (chunk.content.length <= this.chunkSize) {
         return [chunk]
       }
 
-      // Chunk is too large - use LangChain's recursive splitter
       const splitTexts = await this.recursiveSplitter.splitText(chunk.content)
 
-      // Preserve the shouldTranslate flag on all sub-chunks
-      return splitTexts.map((text) => ({
-        content: text,
-        shouldTranslate: chunk.shouldTranslate,
-      }))
+      return splitTexts.map((text, textIndex) => {
+        const isFirst = textIndex === 0
+        const isLast = textIndex === splitTexts.length - 1
+
+        return this.createChunk(
+          (isFirst ? chunk.leadingWhitespace || '' : '') +
+            text +
+            (isLast ? chunk.trailingWhitespace || '' : ''),
+          chunk.shouldTranslate,
+        )
+      })
     })
 
     const splitResults = await Promise.all(splitPromises)
 
-    // Flatten the results
     for (const result of splitResults) {
       finalChunks.push(...result)
     }
@@ -131,68 +148,76 @@ export class MarkdownSplitter {
    */
   private splitInternal(markdown: string, splitPattern: RegExp): Chunk[] {
     const chunks: Chunk[] = []
-    const lines = markdown.split('\n').map((line) => line + '\n')
+    const splitLines = markdown.split('\n')
+
+    const hasTrailingNewline = markdown.endsWith('\n')
+
+    if (hasTrailingNewline && splitLines.at(-1) === '') {
+      splitLines.pop()
+    }
+
+    const lines = splitLines.map(line => line + '\n')
+
+    if (!hasTrailingNewline && lines.length > 0) {
+      lines[lines.length - 1] = lines.at(-1)!.slice(0, -1)
+    }
+
     let currentPosition = 0
 
-    // Handle frontmatter if present
     if (this.hasFrontmatter(lines)) {
       const endIndex = this.findFrontmatterEnd(lines)
       const frontmatterContent = lines.slice(0, endIndex + 1).join('')
-      chunks.push({
-        content: frontmatterContent,
-        shouldTranslate: false,
-      })
+      chunks.push(this.createChunk(frontmatterContent, false))
       currentPosition = endIndex + 1
     }
 
-    let currentChunk: Chunk = {content: '', shouldTranslate: true}
+    let currentChunkContent = ''
+    let currentChunkShouldTranslate = true
     let inCodeBlock = false
 
     for (let i = currentPosition; i < lines.length; i++) {
       const line = lines[i]
 
-      // Check for code fence (supports language identifiers and trailing whitespace)
-      // Matches: ```, ```ruby, ```sh-session, ```python  , etc.
       if (/^```[\w-]*\s*$/.test(line)) {
         if (inCodeBlock) {
-          // End of code block
-          currentChunk.content += line
-          chunks.push(currentChunk)
-          currentChunk = {content: '', shouldTranslate: true}
+          currentChunkContent += line
+          chunks.push(this.createChunk(currentChunkContent, currentChunkShouldTranslate))
+          currentChunkContent = ''
+          currentChunkShouldTranslate = true
           inCodeBlock = false
         } else {
-          // Start of code block
-          if (currentChunk.content.trim()) {
-            chunks.push(currentChunk)
+          if (currentChunkContent.trim()) {
+            chunks.push(this.createChunk(currentChunkContent, currentChunkShouldTranslate))
+            currentChunkContent = line
+          } else {
+            currentChunkContent += line
           }
 
-          currentChunk = {content: line, shouldTranslate: false}
+          currentChunkShouldTranslate = false
           inCodeBlock = true
         }
 
         continue
       }
 
-      // Handle line based on current state and patterns
       if (splitPattern.test(line) && !inCodeBlock) {
-        // This line matches the split pattern and we're not in a code block
-        if (currentChunk.content.trim()) {
-          chunks.push(currentChunk)
+        if (currentChunkContent.trim()) {
+          chunks.push(this.createChunk(currentChunkContent, currentChunkShouldTranslate))
+          currentChunkContent = line
+        } else {
+          currentChunkContent += line
         }
 
-        currentChunk = {content: line, shouldTranslate: true}
+        currentChunkShouldTranslate = true
       } else {
-        // Regular line - append to current chunk
-        currentChunk.content += line
+        currentChunkContent += line
       }
     }
 
-    // Add final chunk if not empty
-    if (currentChunk.content.trim()) {
-      chunks.push(currentChunk)
+    if (currentChunkContent.trim()) {
+      chunks.push(this.createChunk(currentChunkContent, currentChunkShouldTranslate))
     }
 
-    // Filter out empty chunks
-    return chunks.filter((chunk) => chunk.content.trim() !== '')
+    return chunks.filter((chunk) => chunk.content !== '')
   }
 }
