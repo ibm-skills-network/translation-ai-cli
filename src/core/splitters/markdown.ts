@@ -120,9 +120,7 @@ export class MarkdownSplitter {
         const isLast = textIndex === splitTexts.length - 1
 
         return this.createChunk(
-          (isFirst ? chunk.leadingWhitespace || '' : '') +
-            text +
-            (isLast ? chunk.trailingWhitespace || '' : ''),
+          (isFirst ? chunk.leadingWhitespace || '' : '') + text + (isLast ? chunk.trailingWhitespace || '' : ''),
           chunk.shouldTranslate,
         )
       })
@@ -156,7 +154,7 @@ export class MarkdownSplitter {
       splitLines.pop()
     }
 
-    const lines = splitLines.map(line => line + '\n')
+    const lines = splitLines.map((line) => line + '\n')
 
     if (!hasTrailingNewline && lines.length > 0) {
       lines[lines.length - 1] = lines.at(-1)!.slice(0, -1)
