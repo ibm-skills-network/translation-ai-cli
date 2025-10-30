@@ -1,4 +1,13 @@
 /**
+ * Represents a chunk of split source text.
+ * Each chunk can indicate whether it should be translated or not via shouldTranslate.
+ */
+export interface Chunk {
+  content: string;
+  shouldTranslate: boolean;
+}
+
+/**
  * Translation configuration options
  */
 export interface TranslationOptions {
