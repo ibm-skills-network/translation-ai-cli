@@ -10,6 +10,10 @@ export interface WatsonxProfileConfig {
   serviceUrl: string
 }
 
+export interface FakeProfileConfig {
+  responses: string[]
+}
+
 export interface OpenAIProfile {
   config: OpenAIProfileConfig
   name: string
@@ -22,4 +26,10 @@ export interface WatsonxProfile {
   provider: 'watsonx'
 }
 
-export type Profile = OpenAIProfile | WatsonxProfile
+export interface FakeProfile {
+  config: FakeProfileConfig
+  name: string
+  provider: 'fake'
+}
+
+export type Profile = FakeProfile | OpenAIProfile | WatsonxProfile
