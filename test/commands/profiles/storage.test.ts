@@ -74,7 +74,7 @@ describe('profile storage', () => {
       const profile: Profile = {
         config: {
           apiKey: 'test-key',
-          model: 'ibm/granite-3-8b-instruct',
+          model: 'ibm/granite-4-h-small',
           projectId: 'test-project',
           serviceUrl: 'https://test.example.com',
         },
@@ -162,7 +162,7 @@ describe('profile storage', () => {
       const profile2: Profile = {
         config: {
           apiKey: 'key-2',
-          model: 'ibm/granite-3-8b-instruct',
+          model: 'ibm/granite-4-h-small',
           projectId: 'test-project',
           serviceUrl: 'https://test.example.com',
         },

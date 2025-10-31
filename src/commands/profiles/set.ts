@@ -14,7 +14,7 @@ export default class ProfilesSet extends Command {
   static description = 'Create or update a profile'
   static examples = [
     '<%= config.bin %> <%= command.id %> my-openai-profile --provider openai --api-key sk-... --model gpt-4o',
-    '<%= config.bin %> <%= command.id %> my-watsonx-profile --provider watsonx --api-key ... --project-id ... --service-url https://... --model ibm/granite-3-8b-instruct',
+    '<%= config.bin %> <%= command.id %> my-watsonx-profile --provider watsonx --api-key ... --project-id ... --service-url https://... --model ibm/granite-4-h-small',
   ]
   static flags = {
     'api-key': Flags.string({
