@@ -1,7 +1,8 @@
 import {Args, Command, Flags} from '@oclif/core'
 
-import {createClient} from '../core/providers/watsonx.js'
 import {MarkdownTranslator} from '../core/translators/markdown.js'
+import {createProviderFromProfile} from '../lib/profile/factory.js'
+import {loadProfile} from '../lib/profile/storage.js'
 
 export default class Markdown extends Command {
   static args = {
@@ -12,14 +13,18 @@ export default class Markdown extends Command {
   }
   static description = 'Translate markdown'
   static examples = [
-    '<%= config.bin %> <%= command.id %> --from EN --to ES "Hello"',
-    '<%= config.bin %> <%= command.id %> --from EN --to ES --stream "Hello"',
-    'cat doc.md | <%= config.bin %> <%= command.id %> --from EN --to ES',
-    'echo "# Hello" | <%= config.bin %> <%= command.id %> --from EN --to ES',
+    '<%= config.bin %> <%= command.id %> --profile default-openai --from EN --to ES "Hello"',
+    '<%= config.bin %> <%= command.id %> --profile default-openai --from EN --to ES --stream "Hello"',
+    'cat doc.md | <%= config.bin %> <%= command.id %> --profile default-openai --from EN --to ES',
+    'echo "# Hello" | <%= config.bin %> <%= command.id %> --profile default-openai --from EN --to ES',
   ]
   static flags = {
     from: Flags.string({
       description: 'Source language',
+      required: true,
+    }),
+    profile: Flags.string({
+      description: 'Profile to use for translation',
       required: true,
     }),
     stream: Flags.boolean({
@@ -48,7 +53,8 @@ export default class Markdown extends Command {
       input = Buffer.concat(chunks).toString('utf8')
     }
 
-    const llm = createClient()
+    const profile = loadProfile(flags.profile)
+    const llm = createProviderFromProfile(profile)
     const translator = new MarkdownTranslator(llm)
 
     if (flags.stream) {

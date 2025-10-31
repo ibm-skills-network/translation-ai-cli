@@ -1,44 +1,79 @@
-import {describe, expect, it, jest} from '@jest/globals'
+import {afterAll, beforeAll, describe, expect, it} from '@jest/globals'
 import {runCommand} from '@oclif/test'
 
-jest.unstable_mockModule('../../src/core/providers/watsonx.js', () => ({
-  createClient: jest.fn(() => ({
-    invoke: jest.fn(async () => ({
-      content: 'Hóla',
-    })),
-    stream: jest.fn(async function* () {
-      yield {content: 'Hól'}
-      yield {content: 'a'}
-    }),
-  })),
-}))
+import {setupTestProfile, teardownTestProfile} from '../helpers/profile-setup.js'
 
-describe('command structure', () => {
-  it('accepts --from and --to flags with input', async () => {
-    try {
-      await runCommand(['markdown', '--from', 'EN', '--to', 'ES', 'Hello'])
-    } catch (error: unknown) {
-      expect((error as Error).message).not.toMatch(/Unknown flag|Unexpected argument/i)
-    }
+describe('markdown command', () => {
+  beforeAll(() => {
+    setupTestProfile()
   })
 
-  it('accepts --stream flag', async () => {
-    try {
-      await runCommand(['markdown', '--from', 'EN', '--to', 'ES', '--stream', 'Hello'])
-    } catch (error: unknown) {
-      expect((error as Error).message).not.toMatch(/Unknown flag|Unexpected argument/i)
-    }
-  })
-})
-
-describe('run', () => {
-  it('writes the translated text to stdout', async () => {
-    const {stdout} = await runCommand(['markdown', '--from', 'EN', '--to', 'ES', 'Hello'])
-    expect(stdout).toEqual('Hóla')
+  afterAll(() => {
+    teardownTestProfile()
   })
 
-  it('streams the translated text to stdout', async () => {
-    const {stdout} = await runCommand(['markdown', '--from', 'EN', '--to', 'ES', '--stream', 'Hello'])
-    expect(stdout).toEqual('Hóla')
+  describe('basic usage', () => {
+    it('translates markdown', async () => {
+      await expect(
+        runCommand(['markdown', '--profile', 'test-profile', '--from', 'EN', '--to', 'ES', 'Hello']),
+      ).resolves.not.toThrow()
+    })
+
+    it('streams translated markdown', async () => {
+      await expect(
+        runCommand(['markdown', '--profile', 'test-profile', '--from', 'EN', '--to', 'ES', '--stream', 'Hello']),
+      ).resolves.not.toThrow()
+    })
+  })
+
+  describe('output verification', () => {
+    it('outputs the correct translation', async () => {
+      setupTestProfile('test-profile', ['Hóla'])
+
+      const {stdout} = await runCommand([
+        'markdown',
+        '--profile',
+        'test-profile',
+        '--from',
+        'EN',
+        '--to',
+        'ES',
+        'Hello',
+      ])
+      expect(stdout).toBe('Hóla')
+    })
+
+    it('streams the correct translation', async () => {
+      setupTestProfile('test-profile', ['Hóla'])
+
+      const {stdout} = await runCommand([
+        'markdown',
+        '--profile',
+        'test-profile',
+        '--from',
+        'EN',
+        '--to',
+        'ES',
+        '--stream',
+        'Hello',
+      ])
+      expect(stdout).toBe('Hóla')
+    })
+
+    it('respects splitting rules', async () => {
+      setupTestProfile('test-profile', ['# Page 1\nbonjour', '# Page 2\nmonde'])
+
+      const {stdout} = await runCommand([
+        'markdown',
+        '--profile',
+        'test-profile',
+        '--from',
+        'EN',
+        '--to',
+        'FR',
+        '"# Page 1\nhello\n# Page 2\nworld"',
+      ])
+      expect(stdout).toBe('# Page 1\nbonjour\n# Page 2\nmonde')
+    })
   })
 })
