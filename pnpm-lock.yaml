@@ -17,6 +17,9 @@ importers:
       '@langchain/core':
         specifier: ^1.0.2
         version: 1.0.2(openai@6.7.0(ws@8.18.3)(zod@4.1.12))
+      '@langchain/textsplitters':
+        specifier: ^1.0.0
+        version: 1.0.0(@langchain/core@1.0.2(openai@6.7.0(ws@8.18.3)(zod@4.1.12)))
       '@oclif/core':
         specifier: ^4
         version: 4.7.0

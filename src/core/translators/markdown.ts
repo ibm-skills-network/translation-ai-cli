@@ -4,20 +4,41 @@ import {BaseMessage, HumanMessage, SystemMessage} from '@langchain/core/messages
 
 import type {TranslationOptions} from '../types.js'
 
+import {MarkdownSplitter} from '../splitters/markdown.js'
+
 /**
  * Translates markdown content using a chat model
  */
 export class MarkdownTranslator {
-  constructor(private chatModel: BaseChatModel) {}
+  private splitter: MarkdownSplitter
+
+  constructor(private chatModel: BaseChatModel) {
+    this.splitter = new MarkdownSplitter()
+  }
 
   /**
    * Translates markdown content from source language to target language
    */
   async translate(options: TranslationOptions): Promise<string> {
-    const response = await this.chatModel.invoke(this.buildMessages(options))
-    const translatedContent = response.content as string
+    const chunks = await this.splitter.split(options.content)
+    let response = ''
 
-    return translatedContent
+    for (const chunk of chunks) {
+      response += chunk.leadingWhitespace || ''
+
+      if (chunk.shouldTranslate) {
+        // eslint-disable-next-line no-await-in-loop
+        const translatedChunk = await this.chatModel.invoke(this.buildMessages({...options, content: chunk.content}))
+
+        response += translatedChunk.content as string
+      } else {
+        response += chunk.content
+      }
+
+      response += chunk.trailingWhitespace || ''
+    }
+
+    return response
   }
 
   /**
@@ -25,12 +46,27 @@ export class MarkdownTranslator {
    * @yields {string} Chunks of translated content
    */
   async *translateStream(options: TranslationOptions): AsyncGenerator<string> {
-    const stream = await this.chatModel.stream(this.buildMessages(options))
+    const chunks = await this.splitter.split(options.content)
 
-    for await (const chunk of stream) {
-      const {content} = chunk
-      if (typeof content === 'string') {
-        yield content
+    for (const chunk of chunks) {
+      if (chunk.leadingWhitespace) {
+        yield chunk.leadingWhitespace
+      }
+
+      if (chunk.shouldTranslate) {
+        // eslint-disable-next-line no-await-in-loop
+        for await (const streamedChunk of this.streamChunk({
+          ...options,
+          content: chunk.content,
+        })) {
+          yield streamedChunk
+        }
+      } else {
+        yield chunk.content
+      }
+
+      if (chunk.trailingWhitespace) {
+        yield chunk.trailingWhitespace
       }
     }
   }
@@ -46,7 +82,8 @@ export class MarkdownTranslator {
    * Creates the system prompt for translation
    */
   private createSystemPrompt(sourceLanguage: string, targetLanguage: string): string {
-    return `You are a helpful assistant that accurately translates markdown document snippets from ${sourceLanguage} to ${targetLanguage} while preserving markdown syntax, formatting, and custom directives.
+    return `
+You are a helpful assistant that accurately translates markdown document snippets from ${sourceLanguage} to ${targetLanguage} while preserving markdown syntax, formatting, and custom directives.
 You always preserve the structure and formatting exactly as it is.
 You do not add, alter or modify the text you receive in any way.
 
@@ -66,6 +103,22 @@ Reminder:
 - Be consistent with technical terms. If an equivalent technical term is not available in ${targetLanguage}, always use the original term.
 
 *IMPORTANT*
-Translate without any additional information or comments.`
+Translate without any additional information or comments.
+`
+  }
+
+  /**
+   * Streams a single chunk through the chat model
+   * @yields {string} Chunks of translated content from the model
+   */
+  private async *streamChunk(options: TranslationOptions): AsyncGenerator<string> {
+    const stream = await this.chatModel.stream(this.buildMessages(options))
+
+    for await (const chunk of stream) {
+      const {content} = chunk
+      if (typeof content === 'string') {
+        yield content
+      }
+    }
   }
 }
