@@ -28,9 +28,7 @@ export class MarkdownTranslator {
 
       if (chunk.shouldTranslate) {
         // eslint-disable-next-line no-await-in-loop
-        const translatedChunk = await this.chatModel.invoke(
-          this.buildMessages({...options, content: chunk.content}),
-        )
+        const translatedChunk = await this.chatModel.invoke(this.buildMessages({...options, content: chunk.content}))
 
         response += translatedChunk.content as string
       } else {
