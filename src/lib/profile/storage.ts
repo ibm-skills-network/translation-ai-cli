@@ -17,6 +17,11 @@ export function ensureProfilesDir(): void {
 }
 
 export function getProfilePath(name: string): string {
+  // Reject path traversal attempts, empty names, or names with path separators
+  if (!name || name.includes('/') || name.includes('\\') || name.includes('..')) {
+    throw new Error(`Invalid profile name: "${name}". Profile names cannot contain path separators or parent directory references.`)
+  }
+
   return join(getProfilesDir(), `${name}.json`)
 }
 

@@ -222,4 +222,38 @@ describe('profile storage', () => {
       expect(profileExists('nonexistent')).toBe(false)
     })
   })
+
+  describe('getProfilePath', () => {
+    it('accepts valid profile names', () => {
+      expect(() => getProfilePath('valid-profile')).not.toThrow()
+      expect(() => getProfilePath('profile_123')).not.toThrow()
+      expect(() => getProfilePath('MyProfile')).not.toThrow()
+    })
+
+    it('rejects empty profile names', () => {
+      expect(() => getProfilePath('')).toThrow('Invalid profile name')
+    })
+
+    it('rejects profile names with forward slashes', () => {
+      expect(() => getProfilePath('foo/bar')).toThrow('Invalid profile name')
+      expect(() => getProfilePath('/etc/passwd')).toThrow('Invalid profile name')
+    })
+
+    it('rejects profile names with backslashes', () => {
+      expect(() => getProfilePath(String.raw`foo\bar`)).toThrow('Invalid profile name')
+      expect(() => getProfilePath(String.raw`C:\Windows\System32`)).toThrow('Invalid profile name')
+    })
+
+    it('rejects profile names with parent directory references', () => {
+      expect(() => getProfilePath('..')).toThrow('Invalid profile name')
+      expect(() => getProfilePath('../../etc/passwd')).toThrow('Invalid profile name')
+      expect(() => getProfilePath('foo..bar')).toThrow('Invalid profile name')
+    })
+
+    it('rejects path traversal attempts', () => {
+      expect(() => getProfilePath('../../../../some-place-you-should-not-have-access-to')).toThrow(
+        'Invalid profile name',
+      )
+    })
+  })
 })
