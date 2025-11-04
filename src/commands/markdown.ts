@@ -1,6 +1,8 @@
 import {Args, Command, Flags} from '@oclif/core'
 
-import {MarkdownTranslator} from '../core/translators/markdown.js'
+import {MARKDOWN_SYSTEM_PROMPT} from '../core/prompts/markdown.js'
+import {MarkdownSplitter} from '../core/splitters/markdown.js'
+import {Translator} from '../core/translators/translator.js'
 import {createProviderFromProfile} from '../lib/profile/factory.js'
 import {loadProfile} from '../lib/profile/storage.js'
 
@@ -55,7 +57,7 @@ export default class Markdown extends Command {
 
     const profile = loadProfile(flags.profile)
     const llm = createProviderFromProfile(profile)
-    const translator = new MarkdownTranslator(llm)
+    const translator = new Translator(llm, new MarkdownSplitter(), MARKDOWN_SYSTEM_PROMPT)
 
     if (flags.stream) {
       for await (const chunk of translator.translateStream({

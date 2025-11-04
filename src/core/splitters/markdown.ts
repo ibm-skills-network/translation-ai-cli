@@ -1,6 +1,6 @@
 import {MarkdownTextSplitter} from '@langchain/textsplitters'
 
-import type {Chunk} from '../types.js'
+import type {BaseSplitter, Chunk} from '../types.js'
 
 /**
  * Hybrid two-pass markdown splitter for translation purposes.
@@ -13,7 +13,7 @@ import type {Chunk} from '../types.js'
  * - Prevents massive chunks from overwhelming translation APIs
  * - Uses LangChain's intelligent splitting for size management (tries headers > paragraphs > lines)
  */
-export class MarkdownSplitter {
+export class MarkdownSplitter implements BaseSplitter {
   private readonly chunkSize: number
   private recursiveSplitter: MarkdownTextSplitter
 
@@ -30,7 +30,7 @@ export class MarkdownSplitter {
   /**
    * Appends a chunk to an accumulator string, preserving whitespace
    */
-  reconstructChunk(accumulator: string, chunk: Chunk): string {
+  reconstruct(accumulator: string, chunk: Chunk): string {
     return accumulator + (chunk.leadingWhitespace || '') + chunk.content + (chunk.trailingWhitespace || '')
   }
 

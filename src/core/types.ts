@@ -25,6 +25,22 @@ export interface Chunk {
 }
 
 /**
+ * Base interface for content splitters.
+ * All splitter implementations must provide these methods.
+ */
+export interface BaseSplitter {
+  /**
+   * Reconstructs content by appending a chunk to an accumulator with proper whitespace
+   */
+  reconstruct(accumulator: string, chunk: Chunk): string
+
+  /**
+   * Splits content into chunks
+   */
+  split(content: string): Promise<Chunk[]>
+}
+
+/**
  * Translation configuration options
  */
 export interface TranslationOptions {
