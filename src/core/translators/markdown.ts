@@ -24,18 +24,14 @@ export class MarkdownTranslator {
     let response = ''
 
     for (const chunk of chunks) {
-      response += chunk.leadingWhitespace || ''
-
       if (chunk.shouldTranslate) {
         // eslint-disable-next-line no-await-in-loop
         const translatedChunk = await this.chatModel.invoke(this.buildMessages({...options, content: chunk.content}))
 
-        response += translatedChunk.content as string
+        response = this.splitter.reconstructChunk(response, {...chunk, content: translatedChunk.content as string})
       } else {
-        response += chunk.content
+        response = this.splitter.reconstructChunk(response, chunk)
       }
-
-      response += chunk.trailingWhitespace || ''
     }
 
     return response
@@ -49,9 +45,7 @@ export class MarkdownTranslator {
     const chunks = await this.splitter.split(options.content)
 
     for (const chunk of chunks) {
-      if (chunk.leadingWhitespace) {
-        yield chunk.leadingWhitespace
-      }
+      yield chunk.leadingWhitespace || ''
 
       if (chunk.shouldTranslate) {
         // eslint-disable-next-line no-await-in-loop
@@ -65,9 +59,7 @@ export class MarkdownTranslator {
         yield chunk.content
       }
 
-      if (chunk.trailingWhitespace) {
-        yield chunk.trailingWhitespace
-      }
+      yield chunk.trailingWhitespace || ''
     }
   }
 

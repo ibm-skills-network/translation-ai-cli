@@ -28,6 +28,13 @@ export class MarkdownSplitter {
   }
 
   /**
+   * Appends a chunk to an accumulator string, preserving whitespace
+   */
+  reconstructChunk(accumulator: string, chunk: Chunk): string {
+    return accumulator + (chunk.leadingWhitespace || '') + chunk.content + (chunk.trailingWhitespace || '')
+  }
+
+  /**
    * Default split method - automatically detects and uses the appropriate splitting strategy.
    * If the content contains ::page directives, splits by those.
    * Otherwise, splits by headers (# ## ### etc.)
