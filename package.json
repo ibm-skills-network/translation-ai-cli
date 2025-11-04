@@ -57,10 +57,12 @@
       "@oclif/plugin-help",
       "@oclif/plugin-plugins"
     ],
-    "topicSeparator": " ",
     "topics": {
-      "hello": {
-        "description": "Say hello to the world and others"
+      "profiles": {
+        "description": "Manage LLM provider profiles"
+      },
+      "translate": {
+        "description": "Translate content between languages"
       }
     }
   },

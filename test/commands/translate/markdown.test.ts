@@ -1,9 +1,9 @@
 import {afterAll, beforeAll, describe, expect, it} from '@jest/globals'
 import {runCommand} from '@oclif/test'
 
-import {setupTestProfile, teardownTestProfile} from '../helpers/profile-setup.js'
+import {setupTestProfile, teardownTestProfile} from '../../helpers/profile-setup.js'
 
-describe('markdown command', () => {
+describe('translate:markdown command', () => {
   beforeAll(() => {
     setupTestProfile()
   })
@@ -15,13 +15,13 @@ describe('markdown command', () => {
   describe('basic usage', () => {
     it('translates markdown', async () => {
       await expect(
-        runCommand(['markdown', '--profile', 'test-profile', '--from', 'EN', '--to', 'ES', 'Hello']),
+        runCommand(['translate:markdown', '--profile', 'test-profile', '--from', 'EN', '--to', 'ES', 'Hello']),
       ).resolves.not.toThrow()
     })
 
     it('streams translated markdown', async () => {
       await expect(
-        runCommand(['markdown', '--profile', 'test-profile', '--from', 'EN', '--to', 'ES', '--stream', 'Hello']),
+        runCommand(['translate:markdown', '--profile', 'test-profile', '--from', 'EN', '--to', 'ES', '--stream', 'Hello']),
       ).resolves.not.toThrow()
     })
   })
@@ -31,7 +31,7 @@ describe('markdown command', () => {
       setupTestProfile('test-profile', ['Hóla'])
 
       const {stdout} = await runCommand([
-        'markdown',
+        'translate:markdown',
         '--profile',
         'test-profile',
         '--from',
@@ -47,7 +47,7 @@ describe('markdown command', () => {
       setupTestProfile('test-profile', ['Hóla'])
 
       const {stdout} = await runCommand([
-        'markdown',
+        'translate:markdown',
         '--profile',
         'test-profile',
         '--from',
@@ -64,7 +64,7 @@ describe('markdown command', () => {
       setupTestProfile('test-profile', ['# Page 1\nbonjour', '# Page 2\nmonde'])
 
       const {stdout} = await runCommand([
-        'markdown',
+        'translate:markdown',
         '--profile',
         'test-profile',
         '--from',
