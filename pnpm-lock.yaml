@@ -22,7 +22,7 @@ importers:
         version: 1.0.0(@langchain/core@1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12)))(ws@8.18.3)
       '@langchain/textsplitters':
         specifier: ^1.0.0
-        version: 1.0.0(@langchain/core@1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12)))
+        version: 1.0.1(@langchain/core@1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12)))
       '@oclif/core':
         specifier: ^4
         version: 4.7.0
@@ -1210,6 +1210,12 @@ packages:
 
   '@langchain/textsplitters@1.0.0':
     resolution: {integrity: sha512-L1gOwOJXeM+6MKzrj9shSsDyH32j898jgqvVArOjdge2zLyY+Mv4aOuyAAxbPyaFdQXlxKfa9xjqIUyv8TzrqA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@langchain/core': ^1.0.0
+
+  '@langchain/textsplitters@1.0.1':
+    resolution: {integrity: sha512-rheJlB01iVtrOUzttscutRgLybPH9qR79EyzBEbf1u97ljWyuxQfCwIWK+SjoQTM9O8M7GGLLRBSYE26Jmcoww==}
     engines: {node: '>=20'}
     peerDependencies:
       '@langchain/core': ^1.0.0
@@ -5902,6 +5908,11 @@ snapshots:
       - ws
 
   '@langchain/textsplitters@1.0.0(@langchain/core@1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12)))':
+    dependencies:
+      '@langchain/core': 1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12))
+      js-tiktoken: 1.0.21
+
+  '@langchain/textsplitters@1.0.1(@langchain/core@1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12)))':
     dependencies:
       '@langchain/core': 1.1.8(openai@6.7.0(ws@8.18.3)(zod@4.1.12))
       js-tiktoken: 1.0.21
