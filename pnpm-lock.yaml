@@ -19,7 +19,7 @@ importers:
         version: 1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5))
       '@langchain/openai':
         specifier: ^1.0.0
-        version: 1.2.1(@langchain/core@1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5)))(ws@8.19.0)
+        version: 1.2.2(@langchain/core@1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5)))(ws@8.19.0)
       '@langchain/textsplitters':
         specifier: ^1.0.0
         version: 1.0.1(@langchain/core@1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5)))
@@ -1199,12 +1199,6 @@ packages:
   '@langchain/core@1.1.15':
     resolution: {integrity: sha512-b8RN5DkWAmDAlMu/UpTZEluYwCLpm63PPWniRKlE8ie3KkkE7IuMQ38pf4kV1iaiI+d99BEQa2vafQHfCujsRA==}
     engines: {node: '>=20'}
-
-  '@langchain/openai@1.2.1':
-    resolution: {integrity: sha512-eZYPhvXIwz0/8iCjj2LWqeaznQ7DZ6tBdvF+Ebv4sQW2UqJWZqRC8QIdKZgTbs8ffMWPHkSSOidYqu4XfWCNYg==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@langchain/core': ^1.0.0
 
   '@langchain/openai@1.2.2':
     resolution: {integrity: sha512-ByGtj9nJlyL2UPR7BAxtM34g8JA0qEfDKZq7ZisLW23ju+da1ZRAKogoEqoEHHSxl5fAt2LXcydsIYx0qgCDgg==}
@@ -3640,18 +3634,6 @@ packages:
     resolution: {integrity: sha512-kbpaSSGJTWdAY5KPVeMOKXSrPtr8C8C7wodJbcsd51jRnmD+GZu8Y0VoU6Dm5Z4vWr0Ig/1NKuWRKf7j5aaYSg==}
     engines: {node: '>=6'}
 
-  openai@6.15.0:
-    resolution: {integrity: sha512-F1Lvs5BoVvmZtzkUEVyh8mDQPPFolq4F+xdsx/DO8Hee8YF3IGAlZqUIsF+DVGhqf4aU0a3bTghsxB6OIsRy1g==}
-    hasBin: true
-    peerDependencies:
-      ws: ^8.18.0
-      zod: ^3.25 || ^4.0
-    peerDependenciesMeta:
-      ws:
-        optional: true
-      zod:
-        optional: true
-
   openai@6.16.0:
     resolution: {integrity: sha512-fZ1uBqjFUjXzbGc35fFtYKEOxd20kd9fDpFeqWtsOZWiubY8CZ1NAlXHW3iathaFvqmNtCWMIsosCuyeI7Joxg==}
     hasBin: true
@@ -5889,15 +5871,6 @@ snapshots:
       - '@opentelemetry/exporter-trace-otlp-proto'
       - '@opentelemetry/sdk-trace-base'
       - openai
-
-  '@langchain/openai@1.2.1(@langchain/core@1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5)))(ws@8.19.0)':
-    dependencies:
-      '@langchain/core': 1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5))
-      js-tiktoken: 1.0.21
-      openai: 6.15.0(ws@8.19.0)(zod@4.3.5)
-      zod: 4.3.5
-    transitivePeerDependencies:
-      - ws
 
   '@langchain/openai@1.2.2(@langchain/core@1.1.15(openai@6.16.0(ws@8.19.0)(zod@4.3.5)))(ws@8.19.0)':
     dependencies:
@@ -8820,11 +8793,6 @@ snapshots:
   onetime@5.1.2:
     dependencies:
       mimic-fn: 2.1.0
-
-  openai@6.15.0(ws@8.19.0)(zod@4.3.5):
-    optionalDependencies:
-      ws: 8.19.0
-      zod: 4.3.5
 
   openai@6.16.0(ws@8.19.0)(zod@4.3.5):
     optionalDependencies:
