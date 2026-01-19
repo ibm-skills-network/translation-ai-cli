@@ -65,7 +65,7 @@ importers:
         version: 30.2.0(@types/node@18.19.130)(ts-node@10.9.2(@types/node@18.19.130)(typescript@5.9.3))
       oclif:
         specifier: ^4
-        version: 4.22.66(@types/node@18.19.130)
+        version: 4.22.67(@types/node@18.19.130)
       shx:
         specifier: ^0.4.0
         version: 0.4.0
@@ -1247,8 +1247,8 @@ packages:
     resolution: {integrity: sha512-yzdukEfvvyXx31AhN+YhxLhuQdx2SrZDcRtPl5CNkuqh/uNSB2BuA3xpurdv2qotpaw/Z9InRl+Sa9bLp/4aLA==}
     engines: {node: '>=18.0.0'}
 
-  '@oclif/plugin-warn-if-update-available@3.1.53':
-    resolution: {integrity: sha512-ALxKMNFFJQJV1Z2OMVTV+q7EbKHhnTAPcTgkgHeXCNdW5nFExoXuwusZLS4Zv2o83j9UoDx1R/CSX7QZVgEHTA==}
+  '@oclif/plugin-warn-if-update-available@3.1.54':
+    resolution: {integrity: sha512-FrRR1LPTbX3taD4G2AZTZ5TZQIfha73m3c8XyWH5/+QuMo92nLhXWPosr5tJohxU72r+6fut4l0E07lTmX88nA==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/prettier-config@0.2.1':
@@ -3622,8 +3622,8 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  oclif@4.22.66:
-    resolution: {integrity: sha512-a7Rl8Tfjkbf3RTJab3MEC4xl/QReo17lHqaJoit6HHgsnz0C8yf1O+tiwcHYP8CovHFdnpw6k6uRazYcQgf0sg==}
+  oclif@4.22.67:
+    resolution: {integrity: sha512-7r5jNcJRvrlnHmIlXIHoiUILKtxxrcDXkdYGXseexjJrJsywdTjhDspx0D/IshJ9cZyKHF9J3mxpILjvZ/7a3g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -5957,7 +5957,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@oclif/plugin-warn-if-update-available@3.1.53':
+  '@oclif/plugin-warn-if-update-available@3.1.54':
     dependencies:
       '@oclif/core': 4.8.0
       ansis: 3.17.0
@@ -8755,7 +8755,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  oclif@4.22.66(@types/node@18.19.130):
+  oclif@4.22.67(@types/node@18.19.130):
     dependencies:
       '@aws-sdk/client-cloudfront': 3.971.0
       '@aws-sdk/client-s3': 3.971.0
@@ -8765,7 +8765,7 @@ snapshots:
       '@oclif/core': 4.8.0
       '@oclif/plugin-help': 6.2.36
       '@oclif/plugin-not-found': 3.2.73(@types/node@18.19.130)
-      '@oclif/plugin-warn-if-update-available': 3.1.53
+      '@oclif/plugin-warn-if-update-available': 3.1.54
       ansis: 3.17.0
       async-retry: 1.3.3
       change-case: 4.1.2
