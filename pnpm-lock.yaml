@@ -65,7 +65,7 @@ importers:
         version: 30.2.0(@types/node@18.19.130)(ts-node@10.9.2(@types/node@18.19.130)(typescript@5.9.3))
       oclif:
         specifier: ^4
-        version: 4.22.69(@types/node@18.19.130)
+        version: 4.22.70(@types/node@18.19.130)
       shx:
         specifier: ^0.4.0
         version: 0.4.0
@@ -3634,8 +3634,8 @@ packages:
     resolution: {integrity: sha512-gXah6aZrcUxjWg2zR2MwouP2eHlCBzdV4pygudehaKXSGW4v2AsRQUK+lwwXhii6KFZcunEnmSUoYp5CXibxtA==}
     engines: {node: '>= 0.4'}
 
-  oclif@4.22.69:
-    resolution: {integrity: sha512-c9nB/ezO+ug3L+AkhP/kxEptL1eMlQJnCncpNuG6PEb3+SkSjVEk6QBBwQiUb44sD6xKDI+x06CtNoanCiuqeA==}
+  oclif@4.22.70:
+    resolution: {integrity: sha512-ql1LSSb69RrnpOOw+s3EiqgV3HKotpqVpPYKEZqqsN0A5KE5p81vVpZ3F4thQ57ONnOdpxS3voTmEiXSPvoYbg==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -8810,7 +8810,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  oclif@4.22.69(@types/node@18.19.130):
+  oclif@4.22.70(@types/node@18.19.130):
     dependencies:
       '@aws-sdk/client-cloudfront': 3.975.0
       '@aws-sdk/client-s3': 3.975.0
