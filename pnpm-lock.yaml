@@ -19,7 +19,7 @@ importers:
         version: 1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6))
       '@langchain/openai':
         specifier: ^1.0.0
-        version: 1.2.8(@langchain/core@1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6)))(ws@8.19.0)
+        version: 1.2.9(@langchain/core@1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6)))(ws@8.19.0)
       '@langchain/textsplitters':
         specifier: ^1.0.0
         version: 1.0.1(@langchain/core@1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6)))
@@ -1202,12 +1202,6 @@ packages:
   '@langchain/core@1.1.27':
     resolution: {integrity: sha512-YVtEz3nqCh8WxtdVXUICmt2BR2An+mn4YRJUBwcHX47Yrh2VwxpO0l97B2N/sNi658m65HnGyz2/hAjF3fzc1w==}
     engines: {node: '>=20'}
-
-  '@langchain/openai@1.2.8':
-    resolution: {integrity: sha512-qliwC7sb7/Kw0tsl/EiMchMThKt62rZbyofKXtxPwYBte3BMzMXo2HKaEFvAN2QHVOuDi4voqQ7ZlRXc/o2e8w==}
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@langchain/core': ^1.0.0
 
   '@langchain/openai@1.2.9':
     resolution: {integrity: sha512-hExRiUoKOg1vfkwBAI5J2C4tqNx5LLZ0CUelG8Ej6K8bS2LfFN9bL4ZNQYqNIwAJNSqpDaV9tknxP2fssZjp+Q==}
@@ -5895,15 +5889,6 @@ snapshots:
       - '@opentelemetry/exporter-trace-otlp-proto'
       - '@opentelemetry/sdk-trace-base'
       - openai
-
-  '@langchain/openai@1.2.8(@langchain/core@1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6)))(ws@8.19.0)':
-    dependencies:
-      '@langchain/core': 1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6))
-      js-tiktoken: 1.0.21
-      openai: 6.22.0(ws@8.19.0)(zod@4.3.6)
-      zod: 4.3.6
-    transitivePeerDependencies:
-      - ws
 
   '@langchain/openai@1.2.9(@langchain/core@1.1.27(openai@6.22.0(ws@8.19.0)(zod@4.3.6)))(ws@8.19.0)':
     dependencies:
