@@ -31,7 +31,7 @@ importers:
         version: 6.2.37
       '@oclif/plugin-plugins':
         specifier: ^5
-        version: 5.4.56
+        version: 5.4.57
     devDependencies:
       '@eslint/compat':
         specifier: ^1
@@ -1246,8 +1246,8 @@ packages:
     resolution: {integrity: sha512-6RD/EuIUGxAYR45nMQg+nw+PqwCXUxkR6Eyn+1fvbVjtb9d+60OPwB77LCRUI4zKNI+n0LOFaMniEdSpb+A7kQ==}
     engines: {node: '>=18.0.0'}
 
-  '@oclif/plugin-plugins@5.4.56':
-    resolution: {integrity: sha512-mZjRudlmVSr6Stz0CVFuaIZOjwZ5DqjWepQCR/yK9nbs8YunGautpuxBx/CcqaEH29xiQfsuNOIUWa1w/+3VSA==}
+  '@oclif/plugin-plugins@5.4.57':
+    resolution: {integrity: sha512-CHpRzOGSmGTBQab6pgYGLnGgLHqcTTkh25zoDK4voOLJwiSsP6uqGpuA1I6k2s4FDXZDlKbywpcysZQvEuQcHA==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-warn-if-update-available@3.1.55':
@@ -3076,9 +3076,9 @@ packages:
   isexe@2.0.0:
     resolution: {integrity: sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw==}
 
-  isexe@3.1.2:
-    resolution: {integrity: sha512-mIcis6w+JiQf3P7t7mg/35GKB4T1FQsBOtMIvuKw4YErj5RjtbhcTd5/I30fmkmGMwvI0WlzSNN+27K0QCMkAw==}
-    engines: {node: '>=20'}
+  isexe@3.1.5:
+    resolution: {integrity: sha512-6B3tLtFqtQS4ekarvLVMZ+X+VlvQekbe4taUkf/rhVO3d/h0M2rfARm/pXLcPEsjjMsFgrFgSrhQIxcSVrBz8w==}
+    engines: {node: '>=18'}
 
   isstream@0.1.2:
     resolution: {integrity: sha512-Yljz7ffyPbrLpLngrMtZ7NduUgVvi6wG9RJ9IUcyCd59YQ911PBJphODUcbOVbqYfxe1wuYf/LJ8PauMRwsM/g==}
@@ -3560,8 +3560,8 @@ packages:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  npm@10.9.4:
-    resolution: {integrity: sha512-OnUG836FwboQIbqtefDNlyR0gTHzIfwRfE3DuiNewBvnMnWEpB0VEXwBlFVgqpNzIgYo/MHh3d2Hel/pszapAA==}
+  npm@10.9.5:
+    resolution: {integrity: sha512-tFABtwt8S5KDs6DKs4p8uQ+u+8Hpx4ReD6bmkrPzPI0hsYkRWIkY/esz6ZtHyHvqVOltTB9DM/812Lx++SIXRw==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
     bundledDependencies:
@@ -6006,12 +6006,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@oclif/plugin-plugins@5.4.56':
+  '@oclif/plugin-plugins@5.4.57':
     dependencies:
       '@oclif/core': 4.8.3
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
-      npm: 10.9.4
+      npm: 10.9.5
       npm-package-arg: 11.0.3
       npm-run-path: 5.3.0
       object-treeify: 4.0.1
@@ -8175,7 +8175,7 @@ snapshots:
 
   isexe@2.0.0: {}
 
-  isexe@3.1.2: {}
+  isexe@3.1.5: {}
 
   isstream@0.1.2: {}
 
@@ -8799,7 +8799,7 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
-  npm@10.9.4: {}
+  npm@10.9.5: {}
 
   object-inspect@1.13.4: {}
 
@@ -9718,7 +9718,7 @@ snapshots:
 
   which@4.0.0:
     dependencies:
-      isexe: 3.1.2
+      isexe: 3.1.5
 
   widest-line@3.1.0:
     dependencies:
