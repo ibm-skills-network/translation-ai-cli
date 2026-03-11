@@ -78,5 +78,5 @@
     "version": "oclif readme && git add README.md"
   },
   "types": "dist/index.d.ts",
-  "packageManager": "pnpm@10.31.0"
+  "packageManager": "pnpm@10.32.1"
 }
