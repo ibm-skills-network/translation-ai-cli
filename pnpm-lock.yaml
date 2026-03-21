@@ -10,10 +10,10 @@ importers:
     dependencies:
       '@ibm-cloud/watsonx-ai':
         specifier: ^1.7.0
-        version: 1.7.9
+        version: 1.7.10(typescript@5.9.3)
       '@langchain/community':
         specifier: ^1.1.14
-        version: 1.1.24(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.1009.0)(@aws-sdk/credential-provider-node@3.972.21)(@browserbasehq/sdk@2.9.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.56.1)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(zod@4.3.6))(@ibm-cloud/watsonx-ai@1.7.9)(@langchain/core@1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0))(@smithy/eventstream-codec@4.2.12)(@smithy/protocol-http@5.3.12)(@smithy/signature-v4@5.3.12)(@smithy/util-utf8@4.2.2)(fast-xml-parser@5.4.1)(ibm-cloud-sdk-core@5.4.8)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)
+        version: 1.1.24(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.1009.0)(@aws-sdk/credential-provider-node@3.972.21)(@browserbasehq/sdk@2.9.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.56.1)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(zod@4.3.6))(@ibm-cloud/watsonx-ai@1.7.10(typescript@5.9.3))(@langchain/core@1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0))(@smithy/eventstream-codec@4.2.12)(@smithy/protocol-http@5.3.12)(@smithy/signature-v4@5.3.12)(@smithy/util-utf8@4.2.2)(fast-xml-parser@5.4.1)(ibm-cloud-sdk-core@5.4.9)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)
       '@langchain/core':
         specifier: ^1.1.8
         version: 1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)
@@ -416,6 +416,9 @@ packages:
   '@bcoe/v8-coverage@0.2.3':
     resolution: {integrity: sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==}
 
+  '@borewit/text-codec@0.2.2':
+    resolution: {integrity: sha512-DDaRehssg1aNrH4+2hnj1B7vnUGEjU6OIlyRdkMd0aUdIUvKXrJfXsy8LVtXAy7DRvYVluWbMspsRhz2lcW0mQ==}
+
   '@browserbasehq/sdk@2.9.0':
     resolution: {integrity: sha512-Xzm1+6suzQypXjley4Phqer++pjnYyST6S7CArUn3kWyGA8aruXjAV5wkmqE21lgXo9K3/OQJvCu48bKEZFNDQ==}
 
@@ -539,8 +542,8 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
-  '@ibm-cloud/watsonx-ai@1.7.9':
-    resolution: {integrity: sha512-farwTW1ffFt3NVvqZQIcd0VBKByLK6ctnfn4XM7Rf9Mf5JJbNwVPV1Wll046E/MlKAaZEM6sFDGAh+JCnnmqyQ==}
+  '@ibm-cloud/watsonx-ai@1.7.10':
+    resolution: {integrity: sha512-+ckgkR/qLQSG5hmVrD3OywWGEmY8Vgo3WR3T0jGJxcO9w89gPwgQENn3qFnhF0YlILGEl4zNPuTYYDj1MtNSng==}
     engines: {node: '>=20.0.0'}
 
   '@inquirer/ansi@1.0.2':
@@ -1547,6 +1550,10 @@ packages:
     resolution: {integrity: sha512-+PmQX0PiAYPMeVYe237LJAYvOMYW1j2rH5YROyS3b4CTVJum34HfRvKvAzozHAQG0TnHNdUfY9nCeUyRAs//cw==}
     engines: {node: '>=14.16'}
 
+  '@tokenizer/inflate@0.4.1':
+    resolution: {integrity: sha512-2mAv+8pkG6GIZiF1kNg1jAjh27IDxEPKwdGul3snfztFerfPGI1LjDezZp3i7BElXompqEtPmoPx6c2wgtWsOA==}
+    engines: {node: '>=18'}
+
   '@tokenizer/token@0.3.0':
     resolution: {integrity: sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==}
 
@@ -1577,8 +1584,8 @@ packages:
   '@types/babel__traverse@7.28.0':
     resolution: {integrity: sha512-8PvcXf70gTDZBgt9ptxJ8elBeBjcLOAcOtoO/mPJjtji1+CdGbHgm77om1GrsPxsiE+uXIpNSK64UYaIwQXd4Q==}
 
-  '@types/debug@4.1.12':
-    resolution: {integrity: sha512-vIChWdVG3LG1SMxEvI/AK+FWJthlrqlTu7fbrlywTkkaONwk/UAGaULXRlf8vkzFBLVm0zkMdCquhL5aOjhXPQ==}
+  '@types/debug@4.1.13':
+    resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
@@ -2002,9 +2009,6 @@ packages:
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
-
-  buffer@6.0.3:
-    resolution: {integrity: sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==}
 
   builtin-modules@3.3.0:
     resolution: {integrity: sha512-zhaCDicdLuWN5UbN5IMnFqNMhNfo919sH85y2/ea+5Yg9TsTkeZxpL+JLbp6cgYFS4sRLp3YV4S6yDuqVWHYOw==}
@@ -2553,10 +2557,6 @@ packages:
   eventemitter3@4.0.7:
     resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
 
-  events@3.3.0:
-    resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
-    engines: {node: '>=0.8.x'}
-
   execa@1.0.0:
     resolution: {integrity: sha512-adbxcyWV46qiHyvSp50TKt05tB4tK3HcmF7/nxfAdhnox83seTDbwnaqKO4sXRy7roHAIFqJP/Rw/AuEbX61LA==}
     engines: {node: '>=6'}
@@ -2626,9 +2626,9 @@ packages:
     resolution: {integrity: sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==}
     engines: {node: '>=16.0.0'}
 
-  file-type@16.5.4:
-    resolution: {integrity: sha512-/yFHK0aGjFEgDJjEKP0pWCplsPFPhwyfwevf/pVxiN0tmE4L9LmwWxWukdJSHdoCli4VgQLehjJtwQBnqmsKcw==}
-    engines: {node: '>=10'}
+  file-type@21.3.3:
+    resolution: {integrity: sha512-pNwbwz8c3aZ+GvbJnIsCnDjKvgCZLHxkFWLEFxU3RMa+Ey++ZSEfisvsWQMcdys6PpxQjWUOIDi1fifXsW3YRg==}
+    engines: {node: '>=20'}
 
   filelist@1.0.6:
     resolution: {integrity: sha512-5giy2PkLYY1cP39p17Ech+2xlpTRL9HLspOfEgm0L6CwBXBTgsK5ou0JtzYuepxkaQ/tvhCFIJ5uXo0OrM2DxA==}
@@ -2884,8 +2884,8 @@ packages:
   humanize-ms@1.2.1:
     resolution: {integrity: sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==}
 
-  ibm-cloud-sdk-core@5.4.8:
-    resolution: {integrity: sha512-tLMlZv13cV6S1UPj/bhv8XfV9Z1BDDs/4DxHKWnCw7QlJMzmGdHLPX386x9nrFMQMPZ48eAH+Thsa06tzUZkaA==}
+  ibm-cloud-sdk-core@5.4.9:
+    resolution: {integrity: sha512-340fGcZEwUBdxBOPmn8V8fIiFRWF92yFqSFRNLwPQz4h+PS4jcAyd3JGqU6CpFqzUTt+PatVX/jHFwzUTVdmxQ==}
     engines: {node: '>=20'}
 
   iconv-lite@0.7.2:
@@ -3396,6 +3396,10 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
+  load-esm@1.0.3:
+    resolution: {integrity: sha512-v5xlu8eHD1+6r8EHTg6hfmO97LN8ugKtiXcy5e6oN72iD2r6u0RPfLl6fxM+7Wnh2ZRq15o0russMst44WauPA==}
+    engines: {node: '>=13.2.0'}
+
   locate-path@5.0.0:
     resolution: {integrity: sha512-t7hw9pI+WvuwNJXwk5zVHpyhIqzg2qTlklJOf0mVxGSbe3Fp2VieZcduNYjaLDoy6p9uGpQEGWG87WpMKlNq8g==}
     engines: {node: '>=8'}
@@ -3845,10 +3849,6 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
-  peek-readable@4.1.0:
-    resolution: {integrity: sha512-ZI3LnwUv5nOGbQzD9c2iDG6toheuXSZP5esSHBjopsXH4dg19soufvpUGA3uohi5anFtGb2lhAVdHzH6R/Evvg==}
-    engines: {node: '>=8'}
-
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
@@ -3902,10 +3902,6 @@ packages:
     resolution: {integrity: sha512-g8+OnU/L2v+wyiVK+D5fA34J7EH8jZ8DDlvwhRCMxmMj7UCBvxiO1mGeN+36JXIKF4zevU4kRBd8lVgG9vLelA==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  process@0.11.10:
-    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
-    engines: {node: '>= 0.6.0'}
-
   proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}
 
@@ -3947,14 +3943,6 @@ packages:
 
   read-pkg@5.2.0:
     resolution: {integrity: sha512-Ug69mNOpfvKDAc2Q8DRpMjjzdtrnv9HcSMX+4VsZxD1aZ6ZzrIE7rlzXBtWTyhULSMKg076AW6WR5iZpD0JiOg==}
-    engines: {node: '>=8'}
-
-  readable-stream@4.7.0:
-    resolution: {integrity: sha512-oIGGmcpTLwPga8Bn6/Z75SVaH1z5dUut2ibSyAMVhmUggWpmDn2dapB0n7f8nwaSiRtepAsfJyfXIO5DCVAODg==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-
-  readable-web-to-node-stream@3.0.4:
-    resolution: {integrity: sha512-9nX56alTf5bwXQ3ZDipHJhusu9NTQJ/CVPtb/XHAJCXihZeitfJvIRS4GqQ/mfIoOE3IelHMrpayVrosdHBuLw==}
     engines: {node: '>=8'}
 
   rechoir@0.6.2:
@@ -4217,9 +4205,6 @@ packages:
     resolution: {integrity: sha512-UXSH262CSZY1tfu3G3Secr6uGLCFVPMhIqHjlgCUtCCcgihYc/xKs9djMTMUOb2j1mVSeU8EU6NWc/iQKU6Gfg==}
     engines: {node: '>= 0.4'}
 
-  string_decoder@1.3.0:
-    resolution: {integrity: sha512-hkRX8U1WjJFd8LsDJ2yQ/wWWxaopEsABU1XfkM8A+j0+85JAGppt16cr1Whg6KIbb4okU6Mql6BOj+uup/wKeA==}
-
   strip-ansi@6.0.1:
     resolution: {integrity: sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==}
     engines: {node: '>=8'}
@@ -4255,9 +4240,9 @@ packages:
   strnum@2.2.0:
     resolution: {integrity: sha512-Y7Bj8XyJxnPAORMZj/xltsfo55uOiyHcU2tnAVzHUnSJR/KsEX+9RoDeXEnsXtl/CX4fAcrt64gZ13aGaWPeBg==}
 
-  strtok3@6.3.0:
-    resolution: {integrity: sha512-fZtbhtvI9I48xDSywd/somNqgUHl2L2cstmXCCif0itOf96jeW18MBSyrLuNicYQVkvpOxkZtkzujiTJ9LW5Jw==}
-    engines: {node: '>=10'}
+  strtok3@10.3.4:
+    resolution: {integrity: sha512-KIy5nylvC5le1OdaaoCJ07L+8iQzJHGH6pWDuzS+d07Cu7n1MZ2x26P8ZKIWfbK02+XIL8Mp4RkWeqdUCrDMfg==}
+    engines: {node: '>=18'}
 
   supports-color@7.2.0:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
@@ -4297,9 +4282,9 @@ packages:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
     engines: {node: '>=8.0'}
 
-  token-types@4.2.1:
-    resolution: {integrity: sha512-6udB24Q737UD/SDsKAHI9FCRP7Bqc9D/MQUV02ORQg5iskjtLJlZJNdN4kKtcdtwCeWIwIHDGaUsTsCCAa8sFQ==}
-    engines: {node: '>=10'}
+  token-types@6.1.2:
+    resolution: {integrity: sha512-dRXchy+C0IgK8WPC6xvCHFRIWYUbqqdEIKPaKo/AcTUNzwLTK6AH7RjdLWsEZcAN/TBdtfUw3PYEgPr5VPr6ww==}
+    engines: {node: '>=14.16'}
 
   tough-cookie@4.1.4:
     resolution: {integrity: sha512-Loo5UUvLD9ScZ6jh8beX1T6sO1w2/MpCRpEP7V280GKMVUQ0Jzar2U3UJPsrdbziLEMMhu3Ujnq//rhiFuIeag==}
@@ -4429,6 +4414,10 @@ packages:
     resolution: {integrity: sha512-v3Xu+yuwBXisp6QYTcH4UbH+xYJXqnq2m/LtQVWKWzYc1iehYnLixoQDN9FH6/j9/oybfd6W9Ghwkl8+UMKTKQ==}
     engines: {node: '>=0.8.0'}
     hasBin: true
+
+  uint8array-extras@1.5.0:
+    resolution: {integrity: sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A==}
+    engines: {node: '>=18'}
 
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
@@ -5320,6 +5309,8 @@ snapshots:
 
   '@bcoe/v8-coverage@0.2.3': {}
 
+  '@borewit/text-codec@0.2.2': {}
+
   '@browserbasehq/sdk@2.9.0':
     dependencies:
       '@types/node': 18.19.130
@@ -5474,14 +5465,18 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
-  '@ibm-cloud/watsonx-ai@1.7.9':
+  '@ibm-cloud/watsonx-ai@1.7.10(typescript@5.9.3)':
     dependencies:
       '@types/node': 18.19.130
       extend: 3.0.2
       form-data: 4.0.5
-      ibm-cloud-sdk-core: 5.4.8
+      ibm-cloud-sdk-core: 5.4.9
+      ts-node: 10.9.2(@types/node@18.19.130)(typescript@5.9.3)
     transitivePeerDependencies:
+      - '@swc/core'
+      - '@swc/wasm'
       - supports-color
+      - typescript
 
   '@inquirer/ansi@1.0.2': {}
 
@@ -5906,16 +5901,16 @@ snapshots:
       - openai
       - ws
 
-  '@langchain/community@1.1.24(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.1009.0)(@aws-sdk/credential-provider-node@3.972.21)(@browserbasehq/sdk@2.9.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.56.1)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(zod@4.3.6))(@ibm-cloud/watsonx-ai@1.7.9)(@langchain/core@1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0))(@smithy/eventstream-codec@4.2.12)(@smithy/protocol-http@5.3.12)(@smithy/signature-v4@5.3.12)(@smithy/util-utf8@4.2.2)(fast-xml-parser@5.4.1)(ibm-cloud-sdk-core@5.4.8)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)':
+  '@langchain/community@1.1.24(@aws-crypto/sha256-js@5.2.0)(@aws-sdk/client-s3@3.1009.0)(@aws-sdk/credential-provider-node@3.972.21)(@browserbasehq/sdk@2.9.0)(@browserbasehq/stagehand@1.14.0(@playwright/test@1.56.1)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(zod@4.3.6))(@ibm-cloud/watsonx-ai@1.7.10(typescript@5.9.3))(@langchain/core@1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0))(@smithy/eventstream-codec@4.2.12)(@smithy/protocol-http@5.3.12)(@smithy/signature-v4@5.3.12)(@smithy/util-utf8@4.2.2)(fast-xml-parser@5.4.1)(ibm-cloud-sdk-core@5.4.9)(ignore@7.0.5)(jsonwebtoken@9.0.3)(lodash@4.17.23)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)':
     dependencies:
       '@browserbasehq/stagehand': 1.14.0(@playwright/test@1.56.1)(deepmerge@4.3.1)(dotenv@16.6.1)(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(zod@4.3.6)
-      '@ibm-cloud/watsonx-ai': 1.7.9
+      '@ibm-cloud/watsonx-ai': 1.7.10(typescript@5.9.3)
       '@langchain/classic': 1.0.24(@langchain/core@1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0))(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)
       '@langchain/core': 1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)
       '@langchain/openai': 1.3.0(@langchain/core@1.1.34(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0))(ws@8.19.0)
       binary-extensions: 2.3.0
       flat: 5.0.2
-      ibm-cloud-sdk-core: 5.4.8
+      ibm-cloud-sdk-core: 5.4.9
       js-yaml: 4.1.1
       langsmith: 0.5.10(openai@6.32.0(ws@8.19.0)(zod@4.3.6))(ws@8.19.0)
       math-expression-evaluator: 2.0.7
@@ -6470,6 +6465,13 @@ snapshots:
     dependencies:
       defer-to-connect: 2.0.1
 
+  '@tokenizer/inflate@0.4.1':
+    dependencies:
+      debug: 4.4.3(supports-color@8.1.1)
+      token-types: 6.1.2
+    transitivePeerDependencies:
+      - supports-color
+
   '@tokenizer/token@0.3.0': {}
 
   '@tsconfig/node10@1.0.11': {}
@@ -6506,7 +6508,7 @@ snapshots:
     dependencies:
       '@babel/types': 7.29.0
 
-  '@types/debug@4.1.12':
+  '@types/debug@4.1.13':
     dependencies:
       '@types/ms': 2.1.0
 
@@ -6952,11 +6954,6 @@ snapshots:
   buffer-equal-constant-time@1.0.1: {}
 
   buffer-from@1.1.2: {}
-
-  buffer@6.0.3:
-    dependencies:
-      base64-js: 1.5.1
-      ieee754: 1.2.1
 
   builtin-modules@3.3.0: {}
 
@@ -7648,8 +7645,6 @@ snapshots:
 
   eventemitter3@4.0.7: {}
 
-  events@3.3.0: {}
-
   execa@1.0.0:
     dependencies:
       cross-spawn: 6.0.6
@@ -7739,11 +7734,14 @@ snapshots:
     dependencies:
       flat-cache: 4.0.1
 
-  file-type@16.5.4:
+  file-type@21.3.3:
     dependencies:
-      readable-web-to-node-stream: 3.0.4
-      strtok3: 6.3.0
-      token-types: 4.2.1
+      '@tokenizer/inflate': 0.4.1
+      strtok3: 10.3.4
+      token-types: 6.1.2
+      uint8array-extras: 1.5.0
+    transitivePeerDependencies:
+      - supports-color
 
   filelist@1.0.6:
     dependencies:
@@ -8012,9 +8010,9 @@ snapshots:
     dependencies:
       ms: 2.1.3
 
-  ibm-cloud-sdk-core@5.4.8:
+  ibm-cloud-sdk-core@5.4.9:
     dependencies:
-      '@types/debug': 4.1.12
+      '@types/debug': 4.1.13
       '@types/node': 18.19.130
       '@types/tough-cookie': 4.0.5
       axios: 1.13.6(debug@4.4.3)
@@ -8022,10 +8020,11 @@ snapshots:
       debug: 4.4.3(supports-color@8.1.1)
       dotenv: 16.6.1
       extend: 3.0.2
-      file-type: 16.5.4
+      file-type: 21.3.3
       form-data: 4.0.5
       isstream: 0.1.2
       jsonwebtoken: 9.0.3
+      load-esm: 1.0.3
       mime-types: 2.1.35
       retry-axios: 2.6.0(axios@1.13.6(debug@4.4.3))
       tough-cookie: 4.1.4
@@ -8718,6 +8717,8 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
+  load-esm@1.0.3: {}
+
   locate-path@5.0.0:
     dependencies:
       p-locate: 4.1.0
@@ -9073,8 +9074,6 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.3
 
-  peek-readable@4.1.0: {}
-
   picocolors@1.1.1: {}
 
   picomatch@2.3.1: {}
@@ -9115,8 +9114,6 @@ snapshots:
 
   proc-log@4.2.0: {}
 
-  process@0.11.10: {}
-
   proto-list@1.2.4: {}
 
   proxy-from-env@1.1.0: {}
@@ -9156,18 +9153,6 @@ snapshots:
       normalize-package-data: 2.5.0
       parse-json: 5.2.0
       type-fest: 0.6.0
-
-  readable-stream@4.7.0:
-    dependencies:
-      abort-controller: 3.0.0
-      buffer: 6.0.3
-      events: 3.3.0
-      process: 0.11.10
-      string_decoder: 1.3.0
-
-  readable-web-to-node-stream@3.0.4:
-    dependencies:
-      readable-stream: 4.7.0
 
   rechoir@0.6.2:
     dependencies:
@@ -9461,10 +9446,6 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  string_decoder@1.3.0:
-    dependencies:
-      safe-buffer: 5.2.1
-
   strip-ansi@6.0.1:
     dependencies:
       ansi-regex: 5.0.1
@@ -9489,10 +9470,9 @@ snapshots:
 
   strnum@2.2.0: {}
 
-  strtok3@6.3.0:
+  strtok3@10.3.4:
     dependencies:
       '@tokenizer/token': 0.3.0
-      peek-readable: 4.1.0
 
   supports-color@7.2.0:
     dependencies:
@@ -9529,8 +9509,9 @@ snapshots:
     dependencies:
       is-number: 7.0.0
 
-  token-types@4.2.1:
+  token-types@6.1.2:
     dependencies:
+      '@borewit/text-codec': 0.2.2
       '@tokenizer/token': 0.3.0
       ieee754: 1.2.1
 
@@ -9667,6 +9648,8 @@ snapshots:
 
   uglify-js@3.19.3:
     optional: true
+
+  uint8array-extras@1.5.0: {}
 
   unbox-primitive@1.1.0:
     dependencies:
