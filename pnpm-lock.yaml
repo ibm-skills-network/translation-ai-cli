@@ -31,7 +31,7 @@ importers:
         version: 6.2.43
       '@oclif/plugin-plugins':
         specifier: ^5
-        version: 5.4.59
+        version: 5.4.60
     devDependencies:
       '@eslint/compat':
         specifier: ^1
@@ -1264,8 +1264,8 @@ packages:
     resolution: {integrity: sha512-wFg7rUYUxYsBMl0fEBHOJ+GAO0/3Nwpn4scmkqV3IQdch7+N1ke8qFOzLZal0kpa0wt+Tr/aJvaT8iYccPGZDQ==}
     engines: {node: '>=18.0.0'}
 
-  '@oclif/plugin-plugins@5.4.59':
-    resolution: {integrity: sha512-W/F3vNwhC3BHmn1o4g92H8kY4rYw9RsgVRm+GDulZg0XqSoseJYCMQell6ajTj8xljrrG0dZSTuEfc4ETwC2VA==}
+  '@oclif/plugin-plugins@5.4.60':
+    resolution: {integrity: sha512-aTunE6bxVNDGnxwK2RkTo8m5ghFEcD2M35gM/uTC35LgQ1k4PLFYZ3yWfjhrK0LmryrL921+Cr+jwH4nzmlAWg==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-warn-if-update-available@3.1.58':
@@ -3628,8 +3628,8 @@ packages:
     resolution: {integrity: sha512-ppwTtiJZq0O/ai0z7yfudtBpWIoxM8yE6nHi1X47eFR2EWORqfbu6CnPlNsjeN683eT0qG6H/Pyf9fCcvjnnnQ==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
-  npm@10.9.7:
-    resolution: {integrity: sha512-17u9+Ssv6as3iua2l6abTv1H4TtQDhle/Qn+XJ4TjKR4SzIjk1Ox3SZXRVBUW48KojLttHNQUk/U00m7sh1OGw==}
+  npm@10.9.8:
+    resolution: {integrity: sha512-fYwb6ODSmHkqrJQQaCxY3M2lPf/mpgC7ik0HSzzIwG5CGtabRp4bNqikatvCoT42b5INQSqudVH0R7yVmC9hVg==}
     engines: {node: ^18.17.0 || >=20.5.0}
     hasBin: true
     bundledDependencies:
@@ -6090,12 +6090,12 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@oclif/plugin-plugins@5.4.59':
+  '@oclif/plugin-plugins@5.4.60':
     dependencies:
       '@oclif/core': 4.9.0
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
-      npm: 10.9.7
+      npm: 10.9.8
       npm-package-arg: 11.0.3
       npm-run-path: 5.3.0
       object-treeify: 4.0.1
@@ -8961,7 +8961,7 @@ snapshots:
     dependencies:
       path-key: 4.0.0
 
-  npm@10.9.7: {}
+  npm@10.9.8: {}
 
   object-inspect@1.13.4: {}
 
