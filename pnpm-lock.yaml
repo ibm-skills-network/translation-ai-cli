@@ -31,7 +31,7 @@ importers:
         version: 6.2.44
       '@oclif/plugin-plugins':
         specifier: ^5
-        version: 5.4.60
+        version: 5.4.61
     devDependencies:
       '@eslint/compat':
         specifier: ^1
@@ -1264,8 +1264,8 @@ packages:
     resolution: {integrity: sha512-wFg7rUYUxYsBMl0fEBHOJ+GAO0/3Nwpn4scmkqV3IQdch7+N1ke8qFOzLZal0kpa0wt+Tr/aJvaT8iYccPGZDQ==}
     engines: {node: '>=18.0.0'}
 
-  '@oclif/plugin-plugins@5.4.60':
-    resolution: {integrity: sha512-aTunE6bxVNDGnxwK2RkTo8m5ghFEcD2M35gM/uTC35LgQ1k4PLFYZ3yWfjhrK0LmryrL921+Cr+jwH4nzmlAWg==}
+  '@oclif/plugin-plugins@5.4.61':
+    resolution: {integrity: sha512-FsXYLdXJWucrAzDQ3Q2G/mFGeTaUIsL4o76ayG6qNaF8iq1n2O3YnniCl90RLphJmty2ScGTv2YIniOHt4HHjw==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-warn-if-update-available@3.1.58':
@@ -6127,7 +6127,7 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@oclif/plugin-plugins@5.4.60':
+  '@oclif/plugin-plugins@5.4.61':
     dependencies:
       '@oclif/core': 4.9.0
       ansis: 3.17.0
