@@ -25,7 +25,7 @@ importers:
         version: 1.0.1(@langchain/core@1.1.41(openai@6.34.0(ws@8.20.0)(zod@4.3.6))(ws@8.20.0))
       '@oclif/core':
         specifier: ^4
-        version: 4.10.5
+        version: 4.10.6
       '@oclif/plugin-help':
         specifier: ^6
         version: 6.2.44
@@ -44,7 +44,7 @@ importers:
         version: 0.2.1
       '@oclif/test':
         specifier: ^4
-        version: 4.1.18(@oclif/core@4.10.5)
+        version: 4.1.18(@oclif/core@4.10.6)
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
@@ -1248,8 +1248,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@oclif/core@4.10.5':
-    resolution: {integrity: sha512-qcdCF7NrdWPfme6Kr34wwljRCXbCVpL1WVxiNy0Ep6vbWKjxAjFQwuhqkoyL0yjI+KdwtLcOCGn5z2yzdijc8w==}
+  '@oclif/core@4.10.6':
+    resolution: {integrity: sha512-ySCOYnPKZE3KACT1V9It99hWG9b8E5MpagbRdWxPNRO3beMqmbr4SLUQoFtZ9XRtW++kks1ZVwZOdpnR8rpb9A==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/core@4.9.0':
@@ -3888,10 +3888,6 @@ packages:
     resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.3:
-    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
-    engines: {node: '>=12'}
-
   picomatch@4.0.4:
     resolution: {integrity: sha512-QP88BAKvMam/3NxH6vj2o21R6MjxZUAd6nlwAS/pnGvN9IVLocLHxGYIzFhg6fUQ+5th6P4dv4eW9jX3DSIj7A==}
     engines: {node: '>=12'}
@@ -6047,7 +6043,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@oclif/core@4.10.5':
+  '@oclif/core@4.10.6':
     dependencies:
       ansi-escapes: 4.3.2
       ansis: 3.17.0
@@ -6091,12 +6087,12 @@ snapshots:
 
   '@oclif/plugin-help@6.2.44':
     dependencies:
-      '@oclif/core': 4.10.5
+      '@oclif/core': 4.10.6
 
   '@oclif/plugin-not-found@3.2.80(@types/node@18.19.130)':
     dependencies:
       '@inquirer/prompts': 7.10.1(@types/node@18.19.130)
-      '@oclif/core': 4.10.5
+      '@oclif/core': 4.10.6
       ansis: 3.17.0
       fast-levenshtein: 3.0.0
     transitivePeerDependencies:
@@ -6104,7 +6100,7 @@ snapshots:
 
   '@oclif/plugin-plugins@5.4.61':
     dependencies:
-      '@oclif/core': 4.10.5
+      '@oclif/core': 4.10.6
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       npm: 10.9.8
@@ -6120,7 +6116,7 @@ snapshots:
 
   '@oclif/plugin-warn-if-update-available@3.1.60':
     dependencies:
-      '@oclif/core': 4.10.5
+      '@oclif/core': 4.10.6
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       http-call: 5.3.0
@@ -6131,9 +6127,9 @@ snapshots:
 
   '@oclif/prettier-config@0.2.1': {}
 
-  '@oclif/test@4.1.18(@oclif/core@4.10.5)':
+  '@oclif/test@4.1.18(@oclif/core@4.10.6)':
     dependencies:
-      '@oclif/core': 4.10.5
+      '@oclif/core': 4.10.6
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
@@ -8636,7 +8632,7 @@ snapshots:
       chalk: 4.1.2
       ci-info: 4.4.0
       graceful-fs: 4.2.11
-      picomatch: 4.0.3
+      picomatch: 4.0.4
 
   jest-util@30.3.0:
     dependencies:
@@ -8645,7 +8641,7 @@ snapshots:
       chalk: 4.1.2
       ci-info: 4.4.0
       graceful-fs: 4.2.11
-      picomatch: 4.0.3
+      picomatch: 4.0.4
 
   jest-validate@30.3.0:
     dependencies:
@@ -9167,8 +9163,6 @@ snapshots:
   picocolors@1.1.1: {}
 
   picomatch@2.3.2: {}
-
-  picomatch@4.0.3: {}
 
   picomatch@4.0.4: {}
 
