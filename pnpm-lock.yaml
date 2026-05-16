@@ -25,7 +25,7 @@ importers:
         version: 1.0.1(@langchain/core@1.1.46(openai@6.35.0(ws@8.20.1)(zod@4.4.2))(ws@8.20.1))
       '@oclif/core':
         specifier: ^4
-        version: 4.11.2
+        version: 4.11.3
       '@oclif/plugin-help':
         specifier: ^6
         version: 6.2.48
@@ -44,7 +44,7 @@ importers:
         version: 0.2.1
       '@oclif/test':
         specifier: ^4
-        version: 4.1.18(@oclif/core@4.11.2)
+        version: 4.1.18(@oclif/core@4.11.3)
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
@@ -1249,8 +1249,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@oclif/core@4.11.2':
-    resolution: {integrity: sha512-LWDalCgy+hYyAkLa9sMIXMXk6ws5RzQhVnkmfXtVIIyEEYigbXQ/9/x+s76p53MiXxNc6SJB7lfwkPF+SdzfMQ==}
+  '@oclif/core@4.11.3':
+    resolution: {integrity: sha512-gQCSYAtUhJilGKaSaZhqejH9X1dDu+jWQjLmtGOgN/XcKaAEPPSeT2mu1UvlvtPox1/NNRdlBcUa8KRKo2HnJQ==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-help@6.2.48':
@@ -1326,6 +1326,10 @@ packages:
     resolution: {integrity: sha512-IKS7qX59fAGCYBmt5JChcDswQDupZqT2Yn2ZBA3UgTlsjRNNkQzZobbn95xoAAdtTyJmBiJB3Y02qR3rgy3Zog==}
     engines: {node: '>=18.0.0'}
 
+  '@smithy/core@3.24.3':
+    resolution: {integrity: sha512-Ep/7tPamGY8mgESE3LyLKtxJyy6U52WWAqr/3wial47Sj4u3PiIF73AOGI27UyLy9duTkhZbgzodOfLV4TduZg==}
+    engines: {node: '>=18.0.0'}
+
   '@smithy/credential-provider-imds@4.3.2':
     resolution: {integrity: sha512-iYr9ekBjmZ+FwkiHEopqGscBbl78X62cq3p5Dd0eC+gNd7fybNZFQQdDuOQjTVmFymleuA8YRWZnuXWZ8B3kKA==}
     engines: {node: '>=18.0.0'}
@@ -1358,16 +1362,20 @@ packages:
     resolution: {integrity: sha512-59b5HtSVrVR/eYNei3BUj3DCPKD/G7EtDDe7OEJE7i7FtQFugYo6MxbotS8mVJkLNVf8gYaAlEBwwtJ9HzhWSg==}
     engines: {node: '>=18.0.0'}
 
+  '@smithy/types@4.14.2':
+    resolution: {integrity: sha512-P+otAxbV4CqBybp7EkcJCrig63yE2E7PuNVOmilVMRcx/O+QDzGULTrKsq4DV13gSfak9ObPrWaHl/9bL5YcWw==}
+    engines: {node: '>=18.0.0'}
+
   '@smithy/util-buffer-from@2.2.0':
     resolution: {integrity: sha512-IJdWBbTcMQ6DA0gdNhh/BwrLkDR+ADW5Kr1aZmd4k3DIF6ezMV4R2NIAmT08wQJ3yUK82thHWmC/TnK/wpMMIA==}
     engines: {node: '>=14.0.0'}
 
-  '@smithy/util-buffer-from@4.3.2':
-    resolution: {integrity: sha512-ON2bo3f9XI5lvnifTnSJ9KtdJ5dlq5gsYMzpZC+huKsnxroYNySKIs9+oGR8l9p2I0Vf+s/z/X1tfP+9x/Hg1A==}
+  '@smithy/util-buffer-from@4.3.3':
+    resolution: {integrity: sha512-5xlgilVaX96HdVlLZymKUa7vOTZtisOTxBJloM2J4PeRqyAWBeFIq0DnIxQISvwxT4rgJAvk7rHhB+GlCCKe8g==}
     engines: {node: '>=18.0.0'}
 
-  '@smithy/util-hex-encoding@4.3.2':
-    resolution: {integrity: sha512-LJrxu+hrxyCaHjZ6ySOjizBP9SbxYJiNxOHegTuCkwby9gURlUuv9mtV1wsXfkrodjSRfcjgDUOuAEsOf0I9dQ==}
+  '@smithy/util-hex-encoding@4.3.3':
+    resolution: {integrity: sha512-5PzHMWfy7lSt2VTINyNVE1S3vDJDtGVwHGPwpHqGTMQBtOhNsvOH2luhCcMukCNzeKGIaBU3Phevj7K93c0Bfg==}
     engines: {node: '>=18.0.0'}
 
   '@smithy/util-utf8@2.3.0':
@@ -5743,7 +5751,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@oclif/core@4.11.2':
+  '@oclif/core@4.11.3':
     dependencies:
       ansi-escapes: 4.3.2
       ansis: 3.17.0
@@ -5766,12 +5774,12 @@ snapshots:
 
   '@oclif/plugin-help@6.2.48':
     dependencies:
-      '@oclif/core': 4.11.2
+      '@oclif/core': 4.11.3
 
   '@oclif/plugin-not-found@3.2.85(@types/node@18.19.130)':
     dependencies:
       '@inquirer/prompts': 7.10.1(@types/node@18.19.130)
-      '@oclif/core': 4.11.2
+      '@oclif/core': 4.11.3
       ansis: 3.17.0
       fast-levenshtein: 3.0.0
     transitivePeerDependencies:
@@ -5779,7 +5787,7 @@ snapshots:
 
   '@oclif/plugin-plugins@5.4.67':
     dependencies:
-      '@oclif/core': 4.11.2
+      '@oclif/core': 4.11.3
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       npm: 11.14.1
@@ -5795,7 +5803,7 @@ snapshots:
 
   '@oclif/plugin-warn-if-update-available@3.1.64':
     dependencies:
-      '@oclif/core': 4.11.2
+      '@oclif/core': 4.11.3
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       http-call: 5.3.0
@@ -5806,9 +5814,9 @@ snapshots:
 
   '@oclif/prettier-config@0.2.1': {}
 
-  '@oclif/test@4.1.18(@oclif/core@4.11.2)':
+  '@oclif/test@4.1.18(@oclif/core@4.11.3)':
     dependencies:
-      '@oclif/core': 4.11.2
+      '@oclif/core': 4.11.3
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
@@ -5857,6 +5865,13 @@ snapshots:
       '@smithy/types': 4.14.1
       tslib: 2.8.1
 
+  '@smithy/core@3.24.3':
+    dependencies:
+      '@aws-crypto/crc32': 5.2.0
+      '@smithy/types': 4.14.2
+      tslib: 2.8.1
+    optional: true
+
   '@smithy/credential-provider-imds@4.3.2':
     dependencies:
       '@smithy/core': 3.24.2
@@ -5866,8 +5881,8 @@ snapshots:
   '@smithy/eventstream-codec@4.2.14':
     dependencies:
       '@aws-crypto/crc32': 5.2.0
-      '@smithy/types': 4.14.1
-      '@smithy/util-hex-encoding': 4.3.2
+      '@smithy/types': 4.14.2
+      '@smithy/util-hex-encoding': 4.3.3
       tslib: 2.8.1
     optional: true
 
@@ -5889,7 +5904,7 @@ snapshots:
 
   '@smithy/protocol-http@5.3.14':
     dependencies:
-      '@smithy/types': 4.14.1
+      '@smithy/types': 4.14.2
       tslib: 2.8.1
     optional: true
 
@@ -5903,20 +5918,25 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@smithy/types@4.14.2':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   '@smithy/util-buffer-from@2.2.0':
     dependencies:
       '@smithy/is-array-buffer': 2.2.0
       tslib: 2.8.1
 
-  '@smithy/util-buffer-from@4.3.2':
+  '@smithy/util-buffer-from@4.3.3':
     dependencies:
-      '@smithy/core': 3.24.2
+      '@smithy/core': 3.24.3
       tslib: 2.8.1
     optional: true
 
-  '@smithy/util-hex-encoding@4.3.2':
+  '@smithy/util-hex-encoding@4.3.3':
     dependencies:
-      '@smithy/core': 3.24.2
+      '@smithy/core': 3.24.3
       tslib: 2.8.1
     optional: true
 
@@ -5927,7 +5947,7 @@ snapshots:
 
   '@smithy/util-utf8@4.2.2':
     dependencies:
-      '@smithy/util-buffer-from': 4.3.2
+      '@smithy/util-buffer-from': 4.3.3
       tslib: 2.8.1
     optional: true
 
@@ -8429,7 +8449,7 @@ snapshots:
       '@inquirer/confirm': 3.2.0
       '@inquirer/input': 2.3.0
       '@inquirer/select': 2.5.0
-      '@oclif/core': 4.11.2
+      '@oclif/core': 4.11.3
       '@oclif/plugin-help': 6.2.48
       '@oclif/plugin-not-found': 3.2.85(@types/node@18.19.130)
       '@oclif/plugin-warn-if-update-available': 3.1.64
