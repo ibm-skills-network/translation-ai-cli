@@ -28,7 +28,7 @@ importers:
         version: 4.11.3
       '@oclif/plugin-help':
         specifier: ^6
-        version: 6.2.48
+        version: 6.2.49
       '@oclif/plugin-plugins':
         specifier: ^5
         version: 5.4.67
@@ -1253,8 +1253,8 @@ packages:
     resolution: {integrity: sha512-gQCSYAtUhJilGKaSaZhqejH9X1dDu+jWQjLmtGOgN/XcKaAEPPSeT2mu1UvlvtPox1/NNRdlBcUa8KRKo2HnJQ==}
     engines: {node: '>=18.0.0'}
 
-  '@oclif/plugin-help@6.2.48':
-    resolution: {integrity: sha512-nvGLBtUZUWrHfoAEDRsRZUHKVwptyZ6F+MErdVRLQBo3dja0GCZH8DE33dA7mBux2KOmbxGqop15gyud9HZYhQ==}
+  '@oclif/plugin-help@6.2.49':
+    resolution: {integrity: sha512-fEsO0YU7ThtzHE1RGuoHxFu/OGlqxm7PCfFp+U1PS8sde4E0cDqjVDuv78+VKrr45LpC5lWOApj7pm3FNfHrVA==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-not-found@3.2.85':
@@ -5772,7 +5772,7 @@ snapshots:
       wordwrap: 1.0.0
       wrap-ansi: 7.0.0
 
-  '@oclif/plugin-help@6.2.48':
+  '@oclif/plugin-help@6.2.49':
     dependencies:
       '@oclif/core': 4.11.3
 
@@ -8450,7 +8450,7 @@ snapshots:
       '@inquirer/input': 2.3.0
       '@inquirer/select': 2.5.0
       '@oclif/core': 4.11.3
-      '@oclif/plugin-help': 6.2.48
+      '@oclif/plugin-help': 6.2.49
       '@oclif/plugin-not-found': 3.2.85(@types/node@18.19.130)
       '@oclif/plugin-warn-if-update-available': 3.1.64
       ansis: 3.17.0
