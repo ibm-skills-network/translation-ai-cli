@@ -25,7 +25,7 @@ importers:
         version: 1.0.1(@langchain/core@1.1.49(openai@6.39.0(ws@8.21.0)(zod@4.4.3))(ws@8.21.0))
       '@oclif/core':
         specifier: ^4
-        version: 4.11.4
+        version: 4.11.6
       '@oclif/plugin-help':
         specifier: ^6
         version: 6.2.50
@@ -44,7 +44,7 @@ importers:
         version: 0.2.1
       '@oclif/test':
         specifier: ^4
-        version: 4.1.19(@oclif/core@4.11.4)
+        version: 4.1.19(@oclif/core@4.11.6)
       '@types/jest':
         specifier: ^30.0.0
         version: 30.0.0
@@ -1208,8 +1208,8 @@ packages:
     resolution: {integrity: sha512-nn5ozdjYQpUCZlWGuxcJY/KpxkWQs4DcbMCmKojjyrYDEAGy4Ce19NN4v5MduafTwJlbKc99UA8YhSVqq9yPZA==}
     engines: {node: '>=12.4.0'}
 
-  '@oclif/core@4.11.4':
-    resolution: {integrity: sha512-URwiQ5ALx/sJ2iH4vzXEd+H4K6NAI7LRs6Jag3hrgKEpGmaE6alfRC8qjO4GIgb6A3ACaJumqP9twi/M9ywdHQ==}
+  '@oclif/core@4.11.6':
+    resolution: {integrity: sha512-8OTkBkWA0HJz2bSIQI0AoiIeL7ok4bZhUaJNEzfLu+iAn3liAyj4KmXRdXAUZBCjPEfdBTpyxKDAg1l/BDJKVg==}
     engines: {node: '>=18.0.0'}
 
   '@oclif/plugin-help@6.2.50':
@@ -1285,6 +1285,10 @@ packages:
     resolution: {integrity: sha512-KoUi4M1f3BG6kzN1FnCwL7oyFptTbyBJKjR6yhSib+JHRdUmM1o+VwsFtJ66NZCkCzVfJMWRHJNo0R0jznp0Pg==}
     engines: {node: '>=18.0.0'}
 
+  '@smithy/core@3.25.0':
+    resolution: {integrity: sha512-TTD6el7tvKyafkXBf7XO3jLOE+qVxOTrLjp/fEGiV3BMfUHK/LfdYlQO9YgZvzxC7kqA3H/IhJXNqQgnbgjb7A==}
+    engines: {node: '>=18.0.0'}
+
   '@smithy/credential-provider-imds@4.3.9':
     resolution: {integrity: sha512-ZlfJ/4Fa3jYb+3eaohPfG9utX9HmdhFNcFtpoGAhUhdynAOmGXtmigbi7eEiONKM+ykHw8RwKuDEb85Lx7t7fA==}
     engines: {node: '>=18.0.0'}
@@ -1317,16 +1321,20 @@ packages:
     resolution: {integrity: sha512-B2S9+UGm1+/pHkcx3ZoLVX1a+pmSk8rqxRR+ZsNqZaJ5q9FWX9AFGQVM4qG5+OBeQUZVy99HY8HqW8gK/wgXzQ==}
     engines: {node: '>=18.0.0'}
 
+  '@smithy/types@4.15.0':
+    resolution: {integrity: sha512-Z5TAOxygoFvybJV3igo5SloFflSokHx2hu1eFA+DxDTcn+FtKxUSui+rbTRG1pAafMA888Z3MVvCWUuvCrTXjg==}
+    engines: {node: '>=18.0.0'}
+
   '@smithy/util-buffer-from@2.2.0':
     resolution: {integrity: sha512-IJdWBbTcMQ6DA0gdNhh/BwrLkDR+ADW5Kr1aZmd4k3DIF6ezMV4R2NIAmT08wQJ3yUK82thHWmC/TnK/wpMMIA==}
     engines: {node: '>=14.0.0'}
 
-  '@smithy/util-buffer-from@4.3.7':
-    resolution: {integrity: sha512-Ur4edaceoTQZSCi7cLcJfRpw1Kh28pcSVFuOLSrrjppbO3xIMo9Zi0Q0ZfQ0qflMZzB0f5NIBHswBLiFSwzVVg==}
+  '@smithy/util-buffer-from@4.4.0':
+    resolution: {integrity: sha512-C8u31V1di8HIs8azooCJ4XfG/RwmMZ5rJRfwYd0z/B3Yu1985KWouo9m2WuHNXXXh+5fLi+15Ut8jYlgBWETbA==}
     engines: {node: '>=18.0.0'}
 
-  '@smithy/util-hex-encoding@4.3.7':
-    resolution: {integrity: sha512-Q3agAp1QVv6Ws/NcgTDEec2DaISb+Dx647LNALOLMSyN5sYfk85or60e9fd+JvfW5C9jFDNLCja8/GHFKWGq7A==}
+  '@smithy/util-hex-encoding@4.4.0':
+    resolution: {integrity: sha512-z5K3tcNFs35yemHVwA2GEzlqY9aVuFKwkR8N9gtj23Ex3eXCK199NNDHKsBpWvpUFlRFbBet812WhGkKPPwkaw==}
     engines: {node: '>=18.0.0'}
 
   '@smithy/util-utf8@2.3.0':
@@ -3977,11 +3985,6 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  semver@7.8.1:
-    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
-    engines: {node: '>=10'}
-    hasBin: true
-
   semver@7.8.4:
     resolution: {integrity: sha512-rUCObTnP32Q08R2uuIrt7r9PlEonuTmtuXYcW6s5kjdlj3xbnwe+21yXptAUYcMAABLkYYTtnmzb3w3EDZfueA==}
     engines: {node: '>=10'}
@@ -4190,10 +4193,6 @@ packages:
 
   tiny-jsonc@1.0.2:
     resolution: {integrity: sha512-f5QDAfLq6zIVSyCZQZhhyl0QS6MvAyTxgz4X4x3+EoCktNWEYJ6PeoEA97fyb98njpBNNi88ybpD7m+BDFXaCw==}
-
-  tinyglobby@0.2.16:
-    resolution: {integrity: sha512-pn99VhoACYR8nFHhxqix+uvsbXineAasWm5ojXoN8xEwK5Kd3/TrhNn1wByuD52UxWRLy8pu+kRMniEi6Eq9Zg==}
-    engines: {node: '>=12.0.0'}
 
   tinyglobby@0.2.17:
     resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
@@ -5678,7 +5677,7 @@ snapshots:
 
   '@nolyfill/is-core-module@1.0.39': {}
 
-  '@oclif/core@4.11.4':
+  '@oclif/core@4.11.6':
     dependencies:
       ansi-escapes: 4.3.2
       ansis: 3.17.0
@@ -5691,22 +5690,22 @@ snapshots:
       is-wsl: 2.2.0
       lilconfig: 3.1.3
       minimatch: 10.2.5
-      semver: 7.8.1
+      semver: 7.8.4
       string-width: 4.2.3
       supports-color: 8.1.1
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
       widest-line: 3.1.0
       wordwrap: 1.0.0
       wrap-ansi: 7.0.0
 
   '@oclif/plugin-help@6.2.50':
     dependencies:
-      '@oclif/core': 4.11.4
+      '@oclif/core': 4.11.6
 
   '@oclif/plugin-not-found@3.2.87(@types/node@18.19.130)':
     dependencies:
       '@inquirer/prompts': 7.10.1(@types/node@18.19.130)
-      '@oclif/core': 4.11.4
+      '@oclif/core': 4.11.6
       ansis: 3.17.0
       fast-levenshtein: 3.0.0
     transitivePeerDependencies:
@@ -5714,7 +5713,7 @@ snapshots:
 
   '@oclif/plugin-plugins@5.4.74':
     dependencies:
-      '@oclif/core': 4.11.4
+      '@oclif/core': 4.11.6
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       npm: 11.17.0
@@ -5730,7 +5729,7 @@ snapshots:
 
   '@oclif/plugin-warn-if-update-available@3.1.65':
     dependencies:
-      '@oclif/core': 4.11.4
+      '@oclif/core': 4.11.6
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
       http-call: 5.3.0
@@ -5741,9 +5740,9 @@ snapshots:
 
   '@oclif/prettier-config@0.2.1': {}
 
-  '@oclif/test@4.1.19(@oclif/core@4.11.4)':
+  '@oclif/test@4.1.19(@oclif/core@4.11.6)':
     dependencies:
-      '@oclif/core': 4.11.4
+      '@oclif/core': 4.11.6
       ansis: 3.17.0
       debug: 4.4.3(supports-color@8.1.1)
     transitivePeerDependencies:
@@ -5792,6 +5791,13 @@ snapshots:
       '@smithy/types': 4.14.4
       tslib: 2.8.1
 
+  '@smithy/core@3.25.0':
+    dependencies:
+      '@aws-crypto/crc32': 5.2.0
+      '@smithy/types': 4.15.0
+      tslib: 2.8.1
+    optional: true
+
   '@smithy/credential-provider-imds@4.3.9':
     dependencies:
       '@smithy/core': 3.24.7
@@ -5801,8 +5807,8 @@ snapshots:
   '@smithy/eventstream-codec@4.2.14':
     dependencies:
       '@aws-crypto/crc32': 5.2.0
-      '@smithy/types': 4.14.4
-      '@smithy/util-hex-encoding': 4.3.7
+      '@smithy/types': 4.15.0
+      '@smithy/util-hex-encoding': 4.4.0
       tslib: 2.8.1
     optional: true
 
@@ -5824,7 +5830,7 @@ snapshots:
 
   '@smithy/protocol-http@5.3.14':
     dependencies:
-      '@smithy/types': 4.14.4
+      '@smithy/types': 4.15.0
       tslib: 2.8.1
     optional: true
 
@@ -5838,20 +5844,25 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
+  '@smithy/types@4.15.0':
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   '@smithy/util-buffer-from@2.2.0':
     dependencies:
       '@smithy/is-array-buffer': 2.2.0
       tslib: 2.8.1
 
-  '@smithy/util-buffer-from@4.3.7':
+  '@smithy/util-buffer-from@4.4.0':
     dependencies:
-      '@smithy/core': 3.24.7
+      '@smithy/core': 3.25.0
       tslib: 2.8.1
     optional: true
 
-  '@smithy/util-hex-encoding@4.3.7':
+  '@smithy/util-hex-encoding@4.4.0':
     dependencies:
-      '@smithy/core': 3.24.7
+      '@smithy/core': 3.25.0
       tslib: 2.8.1
     optional: true
 
@@ -5862,7 +5873,7 @@ snapshots:
 
   '@smithy/util-utf8@4.2.2':
     dependencies:
-      '@smithy/util-buffer-from': 4.3.7
+      '@smithy/util-buffer-from': 4.4.0
       tslib: 2.8.1
     optional: true
 
@@ -8007,7 +8018,7 @@ snapshots:
       jest-message-util: 30.4.1
       jest-util: 30.4.1
       pretty-format: 30.4.1
-      semver: 7.8.1
+      semver: 7.8.4
       synckit: 0.11.12
     transitivePeerDependencies:
       - supports-color
@@ -8397,7 +8408,7 @@ snapshots:
       '@inquirer/confirm': 3.2.0
       '@inquirer/input': 2.3.0
       '@inquirer/select': 2.5.0
-      '@oclif/core': 4.11.4
+      '@oclif/core': 4.11.6
       '@oclif/plugin-help': 6.2.50
       '@oclif/plugin-not-found': 3.2.87(@types/node@18.19.130)
       '@oclif/plugin-warn-if-update-available': 3.1.65
@@ -8753,8 +8764,6 @@ snapshots:
 
   semver@7.7.4: {}
 
-  semver@7.8.1: {}
-
   semver@7.8.4: {}
 
   sentence-case@3.0.4:
@@ -8988,11 +8997,6 @@ snapshots:
       minimatch: 3.1.5
 
   tiny-jsonc@1.0.2: {}
-
-  tinyglobby@0.2.16:
-    dependencies:
-      fdir: 6.5.0(picomatch@4.0.4)
-      picomatch: 4.0.4
 
   tinyglobby@0.2.17:
     dependencies:
