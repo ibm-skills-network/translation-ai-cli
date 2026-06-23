@@ -8,31 +8,8 @@
   },
   "bugs": "https://github.com/ibm-skills-network/translation-ai-cli/issues",
   "dependencies": {
-    "@ibm-cloud/watsonx-ai": "^1.7.14",
-    "@langchain/community": "^1.1.29",
-    "@langchain/core": "^1.2.1",
-    "@langchain/openai": "^1.5.2",
-    "@langchain/textsplitters": "^1.0.1",
-    "@oclif/core": "^4.11.11",
-    "@oclif/plugin-help": "^6.2.52",
-    "@oclif/plugin-plugins": "^5.4.78"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.1",
-    "@jest/globals": "^30.4.1",
-    "@oclif/prettier-config": "^0.2.1",
-    "@oclif/test": "^4.1.20",
-    "@types/jest": "^30.0.0",
-    "@types/node": "^18.19.130",
-    "eslint": "^9.39.4",
-    "eslint-config-oclif": "^6.0.173",
-    "eslint-config-prettier": "^10.1.8",
-    "jest": "^30.4.2",
-    "oclif": "^4.23.21",
-    "shx": "^0.4.0",
-    "ts-jest": "^29.4.11",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
   },
   "engines": {
     "node": ">=18.0.0"
@@ -54,8 +31,6 @@
     "dirname": "translation-ai-cli",
     "commands": "./dist/commands",
     "plugins": [
-      "@oclif/plugin-help",
-      "@oclif/plugin-plugins"
     ],
     "topics": {
       "profiles": {
